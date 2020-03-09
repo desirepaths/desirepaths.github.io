@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+<html lang="中文" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>电脑与 手机 通过 USB 进行数据传输 - desirepaths 的博客</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="个人目标：随性而为!.,
+电脑 与 手机 通过 USB 进行数据传输
+
+
+1.参考2.过程(电脑Windows/手机iOS)3.过程(手机 iOS Xamarin语言 版本)
+
+
+1.参考
+1.iOS and MAC(经过,"> 
+    <meta name="author" content="Tim"> 
+    <link rel="alternative" href="atom.xml" title="desirepaths 的博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
+    <link rel="stylesheet" href="/css/ball-atom.min.css">
+</head>
+</html>
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">desirepaths 的博客</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://yoursite.com">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">电脑与 手机 通过 USB 进行数据传输</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg) ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/iOS"><b>「
+                    </b>IOS<b> 」</b></a>
+                
+                November 27, 2019
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/11/27/PC-Phone-data-transfer/" title="电脑与 手机 通过 USB 进行数据传输">电脑与 手机 通过 USB 进行数据传输</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    13k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    12 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/iOS/">iOS</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <blockquote>
+<p>电脑 与 手机 通过 USB 进行数据传输</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="1-参考"><a href="#1-参考" class="headerlink" title="1.参考"></a><a href="#references">1.参考</a></h2><h2 id="2-过程-电脑Windows-手机iOS"><a href="#2-过程-电脑Windows-手机iOS" class="headerlink" title="2.过程(电脑Windows/手机iOS)"></a><a href="#steps">2.过程(电脑Windows/手机iOS)</a></h2><h2 id="3-过程-手机-iOS-Xamarin语言-版本"><a href="#3-过程-手机-iOS-Xamarin语言-版本" class="headerlink" title="3.过程(手机 iOS Xamarin语言 版本)"></a><a href="#steps_iOS_xamarin">3.过程(手机 iOS Xamarin语言 版本)</a></h2><hr>
+<hr>
+<hr>
+<h2 id="1-参考-1"><a href="#1-参考-1" class="headerlink" title="1.参考"></a>1.参考<a name="references"></a></h2><ul>
+<li>1.<a href="https://github.com/ghzjtian/peertalk" target="_blank" rel="noopener">iOS and MAC(经过验证可以用)</a><ul>
+<li>1.<a href="https://github.com/kirankunigiri/peertalk-simple" target="_blank" rel="noopener">kirankunigiri/peertalk-simple (Mac <-> iOS 传输其它的数据</-></a></li>
+</ul>
+</li>
+<li>2.<a href="http://thecodewash.blogspot.com/2017/05/communicating-with-your-ios-app-over.html" target="_blank" rel="noopener">Windows/iOS(Xamarin) 客户端(Communicating with your iOS app over USB (C# and/or Xamarin))</a></li>
+<li>3.<a href="https://www.jianshu.com/p/eba133891ec6" target="_blank" rel="noopener">使用usbmuxd服务，通过USB连接与PC端、Mac端实现通信，Peertalk的使用</a></li>
+<li>4.<a href="https://www.jianshu.com/p/087fd3ccdd9f" target="_blank" rel="noopener">探讨使用USB线缆与iOS App通信的小笔记</a></li>
+<li>5.<a href="http://docs.quamotion.mobi/docs/" target="_blank" rel="noopener">iOS 与 Windows 的连接</a></li>
+<li>6.<a href="https://www.youtube.com/watch?v=34OZp1rrxxg" target="_blank" rel="noopener">libimobiledevice(libimobiledevice.1.2.1-r857-win-x64.zip) 的使用视频</a></li>
+<li>7.<a href="https://github.com/libimobiledevice-win32/imobiledevice-net/tree/master/iMobileDevice-net.Demo" target="_blank" rel="noopener">Windows libimobiledevice-win32/imobiledevice-net 用法示例程序</a></li>
+<li>8.<a href="https://libimobiledevice-win32.github.io/imobiledevice-net/api/iMobileDevice.html" target="_blank" rel="noopener">iMobileDevice API Documentation</a></li>
+<li>9.<a href="https://www.jianshu.com/p/08da95add4da" target="_blank" rel="noopener">iOS App连接外设的几种方式</a></li>
+</ul>
+<hr>
+<h2 id="2-过程-电脑Windows-版本"><a href="#2-过程-电脑Windows-版本" class="headerlink" title="2.过程(电脑Windows 版本)"></a>2.过程(电脑Windows 版本)<a name="steps"></a></h2><h4 id="1-Windows-安装并启动-usbmuxd-service-服务"><a href="#1-Windows-安装并启动-usbmuxd-service-服务" class="headerlink" title="1.Windows 安装并启动 usbmuxd service 服务"></a>1.Windows 安装并启动 <code>usbmuxd service</code> 服务</h4><ul>
+<li>1.方法1.安装 iTunes 即会自动带有</li>
+<li>2.方法2. <a href="https://apple-mobile-device-support.updatestar.com/" target="_blank" rel="noopener">直接下载 iTunes.exe</a>, 然后解压，得到 <code>AppleMobileDeviceSupport64.msi</code> 文件，双击安装即会安装 <code>usbmuxd service</code>.</li>
+</ul>
+<h4 id="2-Windows-项目-导入-imobiledevice-net-nuget-库"><a href="#2-Windows-项目-导入-imobiledevice-net-nuget-库" class="headerlink" title="2.Windows 项目 导入 imobiledevice-net nuget 库"></a>2.Windows 项目 <a href="https://www.nuget.org/packages/imobiledevice-net/" target="_blank" rel="noopener">导入 <code>imobiledevice-net</code> nuget 库</a></h4><h4 id="3-数据交互"><a href="#3-数据交互" class="headerlink" title="3.数据交互"></a>3.数据交互</h4><ul>
+<li>1.监听变化</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">NativeLibraries.Load();</span><br><span class="line">var _iDeviceApi = LibiMobileDevice.Instance.iDevice;</span><br><span class="line">var ret = _iDeviceApi.idevice_event_subscribe(EventCallback(), new IntPtr());</span><br><span class="line"></span><br><span class="line">private iDeviceEventCallBack EventCallback()</span><br><span class="line">&#123;</span><br><span class="line">    return (ref iDeviceEvent devEvent, IntPtr data) =&gt;</span><br><span class="line">    &#123;</span><br><span class="line">        Debug.WriteLine(&quot;EventCallback() iDeviceEvent&quot;);</span><br><span class="line">        switch (devEvent.@event)</span><br><span class="line">        &#123;</span><br><span class="line">            case iDeviceEventType.DeviceAdd:</span><br><span class="line">                Connect(devEvent.udidString);</span><br><span class="line">                break;</span><br><span class="line">            case iDeviceEventType.DeviceRemove:</span><br><span class="line">                break;</span><br><span class="line">            default:</span><br><span class="line">                return;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>2.连接</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">private void Connect(string newUdid)</span><br><span class="line">&#123;</span><br><span class="line">    _iDeviceApi.idevice_new(out iDeviceHandle deviceHandle, newUdid).ThrowOnError();</span><br><span class="line">    var error =_iDeviceApi.idevice_connect(deviceHandle, 5050, out iDeviceConnectionHandle connection);</span><br><span class="line">    if (error != iDeviceError.Success) return;</span><br><span class="line">    ReceiveDataFromDevice(connection);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>3.接收数据</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">private void ReceiveDataFromDevice(iDeviceConnectionHandle connection)</span><br><span class="line">&#123;</span><br><span class="line">    Task.Run(() =&gt;</span><br><span class="line">    &#123;</span><br><span class="line">        while (true)</span><br><span class="line">        &#123;</span><br><span class="line">            uint receivedBytes = 0;</span><br><span class="line">            _iDeviceApi.idevice_connection_receive(connection, _inboxBuffer, (uint)_inboxBuffer.Length,</span><br><span class="line">                ref receivedBytes);</span><br><span class="line">            if (receivedBytes &lt;= 0) continue;</span><br><span class="line">            // Do something with your received bytes</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>4.发送数据</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_iDeviceApi.idevice_connection_send(connection, bytesPending, (uint)bytesPending.Length, ref sentBytes)</span><br></pre></td></tr></table></figure>
+<h2 id="3-过程-手机-iOS-Xamarin语言-版本-1"><a href="#3-过程-手机-iOS-Xamarin语言-版本-1" class="headerlink" title="3.过程(手机 iOS Xamarin语言 版本)"></a>3.过程(手机 iOS Xamarin语言 版本)<a name="steps_iOS_xamarin"></a></h2><h4 id="1-参考-2"><a href="#1-参考-2" class="headerlink" title="1.参考:"></a>1.参考:</h4><ul>
+<li>1.<a href="https://docs.microsoft.com/en-us/xamarin/ios/platform/binding-objective-c/walkthrough?tabs=macos" target="_blank" rel="noopener">Walkthrough: Binding an iOS Objective-C Library</a></li>
+<li>2.<a href="https://www.jianshu.com/p/486e3b737707" target="_blank" rel="noopener">Create a Static Library in Xcode</a></li>
+<li>3.<a href="https://www.jianshu.com/p/8e3e6175c5f5" target="_blank" rel="noopener">iOS 静态库Framework、static Library(.a )、Bundle的浅析与制作</a></li>
+<li>4.<a href="https://forums.xamarin.com/discussion/58933/possible-to-use-xamarin-with-ios-osx-communication-over-usb-works-in-native" target="_blank" rel="noopener">Possible to use Xamarin with iOS - OSX communication over USB? Works in native…</a></li>
+</ul>
+<h4 id="2-有两种方法"><a href="#2-有两种方法" class="headerlink" title="2.有两种方法"></a>2.有两种方法</h4><h5 id="1-用-Peertalk-的-Object-C-库，生成-a-静态库-然后再用-Xamarin-的-Creating-Bindings-with-Objective-Sharpie"><a href="#1-用-Peertalk-的-Object-C-库，生成-a-静态库-然后再用-Xamarin-的-Creating-Bindings-with-Objective-Sharpie" class="headerlink" title="1.用 Peertalk 的 Object-C 库，生成 .a 静态库, 然后再用 Xamarin 的 Creating Bindings with Objective Sharpie."></a>1.用 Peertalk 的 Object-C 库，生成 .a 静态库, 然后再用 Xamarin 的 <code>Creating Bindings with Objective Sharpie</code>.</h5><ul>
+<li>1.把 Peertalk Object-C 代码生成 .a 库</li>
+<li>2.建立 <code>Bindings with Objective Sharpie</code> Project, 导入相关的 <code>.h</code> 文件 和 <code>.a</code> 库.</li>
+<li>3.在 Xamarin 项目中调用 <code>.a</code> 库的接口，完成 USB 数据交流的功能.</li>
+</ul>
+<h5 id="2-直接了解-Peertalk-的-USB-通讯原理，然后用-Xamarin-实现"><a href="#2-直接了解-Peertalk-的-USB-通讯原理，然后用-Xamarin-实现" class="headerlink" title="2.直接了解 Peertalk 的 USB 通讯原理，然后用 Xamarin 实现."></a>2.直接了解 Peertalk 的 USB 通讯原理，然后用 Xamarin 实现.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">var socket = new Socket(AddressFamily.InterNetwork,</span><br><span class="line">                      SocketType.Stream,</span><br><span class="line">                      ProtocolType.Tcp);</span><br><span class="line"></span><br><span class="line">                  socket.Bind(new IPEndPoint(IPAddress.Loopback, 5050));</span><br><span class="line">                  socket.Listen(100);</span><br><span class="line">                  socket.BeginAccept((ar) =&gt;</span><br><span class="line">                  &#123;</span><br><span class="line">                      var connectionAttempt = (Socket) ar.AsyncState;</span><br><span class="line">                      var connectedSocket = connectionAttempt.EndAccept(ar);</span><br><span class="line">                      // Do something with &quot;connectedSocket&quot;</span><br><span class="line">                      </span><br><span class="line">                      // Data send </span><br><span class="line">                      connectedSocket.Send(bytesSent, bytesSent.Length, 0);</span><br><span class="line">                      // Data Received</span><br><span class="line">                      </span><br><span class="line">                       do</span><br><span class="line">	                &#123;</span><br><span class="line">	                    bytes = connectedSocket.Receive(bytesReceived, bytesReceived.Length, 0);</span><br><span class="line">	                    if (bytes &lt;= 0  ) continue;</span><br><span class="line">	                &#125;</span><br><span class="line">	                while (true);</span><br><span class="line">                      </span><br><span class="line">                      </span><br><span class="line">             &#125;, socket);</span><br></pre></td></tr></table></figure>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='blog-comments'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
+        data-d=''
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1573019751/TriDiamond_logo_ui_xeublz.jpg" height=300 width=300></img>
+                    <p>Tim</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        <dd><a href="https://github.com/TriDiamond" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/TriDiamond6" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="https://stackoverflow.com/users/7602324/tridiamond?tab=profile" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">89 <p>Articles</p></a></li>
+                    <li><a href="/categories">26 <p>Categories</p></a></li>
+                    <li><a href="/tags">23 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-参考"><span class="toc-number">1.</span> <span class="toc-text">1.参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-过程-电脑Windows-手机iOS"><span class="toc-number">2.</span> <span class="toc-text">2.过程(电脑Windows/手机iOS)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-过程-手机-iOS-Xamarin语言-版本"><span class="toc-number">3.</span> <span class="toc-text">3.过程(手机 iOS Xamarin语言 版本)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-参考-1"><span class="toc-number">4.</span> <span class="toc-text">1.参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-过程-电脑Windows-版本"><span class="toc-number">5.</span> <span class="toc-text">2.过程(电脑Windows 版本)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-过程-手机-iOS-Xamarin语言-版本-1"><span class="toc-number">6.</span> <span class="toc-text">3.过程(手机 iOS Xamarin语言 版本)</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2020
+        <span class="gradient-text">
+            Tim
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+    <script src="/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149874671-1');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>

@@ -1,0 +1,613 @@
+
+<!DOCTYPE html>
+<html lang="中文" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Android APP基本组件 - desirepaths 的博客</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="个人目标：随性而为!.,Android APP基本组件
+记录 APP 相关的组件及链接.
+
+1.通用开发2.Android 所用的外部库3.Android 自带的 View
+
+
+1.通用开发
+2.Android 所用的外部,"> 
+    <meta name="author" content="Tim"> 
+    <link rel="alternative" href="atom.xml" title="desirepaths 的博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
+    <link rel="stylesheet" href="/css/ball-atom.min.css">
+</head>
+</html>
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">desirepaths 的博客</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://yoursite.com">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">Android APP基本组件</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg) ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/Android"><b>「
+                    </b>ANDROID<b> 」</b></a>
+                
+                July 04, 2018
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2018/07/04/Android APP基本组件/" title="Android APP基本组件">Android APP基本组件</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    13k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    12 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Android/">Android</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h1 id="Android-APP基本组件"><a href="#Android-APP基本组件" class="headerlink" title="Android APP基本组件"></a>Android APP基本组件</h1><blockquote>
+<p>记录 APP 相关的组件及链接.<br><a id="more"></a></p>
+</blockquote>
+<h3 id="1-通用开发"><a href="#1-通用开发" class="headerlink" title="1.通用开发"></a>1.通用开发</h3><h3 id="2-Android-所用的外部库"><a href="#2-Android-所用的外部库" class="headerlink" title="2.Android 所用的外部库"></a><a href="#third_lib">2.Android 所用的外部库</a></h3><h3 id="3-Android-自带的-View"><a href="#3-Android-自带的-View" class="headerlink" title="3.Android 自带的 View"></a><a href="#self_android_view">3.Android 自带的 View</a></h3><hr>
+<hr>
+<hr>
+<h3 id="1-通用开发-1"><a href="#1-通用开发-1" class="headerlink" title="1.通用开发"></a>1.通用开发</h3><hr>
+<h3 id="2-Android-所用的外部库-1"><a href="#2-Android-所用的外部库-1" class="headerlink" title="2.Android 所用的外部库"></a>2.Android 所用的外部库<a name="third_lib"></a></h3><h5 id="1-网络相关"><a href="#1-网络相关" class="headerlink" title="1.网络相关"></a>1.网络相关</h5><ul>
+<li><p>1.异步http请求</p>
+<blockquote>
+<p>android-async-http</p>
+<ul>
+<li><a href="https://github.com/loopj/android-async-http" target="_blank" rel="noopener">1.GitHub 上的源码及使用文档</a><ul>
+<li><a href="http://www.jianshu.com/p/2fe3e305404e" target="_blank" rel="noopener">2.http://www.jianshu.com/p/2fe3e305404e</a></li>
+<li>3.混淆代码:</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	#android-async-http</span><br><span class="line">-keep class cz.msebera.android.httpclient.** &#123; *; &#125;</span><br><span class="line">-keep class com.loopj.android.http.** &#123; *; &#125;</span><br></pre></td></tr></table></figure>
+</code></pre></li>
+<li><p>2.http 请求封装</p>
+<blockquote>
+<p>httpmime-4.1.3.jar</p>
+<p><a href="https://github.com/apache/httpcomponents-client" target="_blank" rel="noopener">https://github.com/apache/httpcomponents-client</a></p>
+<p><a href="http://www.jianshu.com/p/ab6a2b90ae5e" target="_blank" rel="noopener">http://www.jianshu.com/p/ab6a2b90ae5e</a></p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>3.网络图片加载库 Fresco<blockquote>
+<p>com.facebook.fresco:fresco:0.10.+</p>
+<ul>
+<li><a href="https://github.com/facebook/fresco" target="_blank" rel="noopener">1.https://github.com/facebook/fresco</a></li>
+<li><a href="https://www.fresco-cn.org/docs/index.html" target="_blank" rel="noopener">2.https://www.fresco-cn.org/docs/index.html</a></li>
+<li><a href="http://www.jianshu.com/p/bb32bca8796b" target="_blank" rel="noopener">3.http://www.jianshu.com/p/bb32bca8796b</a></li>
+<li><a href="http://frescolib.org/docs/shipping.html" target="_blank" rel="noopener">4.官方混淆介绍</a></li>
+<li>5.图片加载比例的显示效果 <code>scaleType</code><ul>
+<li><a href="https://stackoverflow.com/questions/33174607/fresco-library-issues" target="_blank" rel="noopener">1.不能用 <code>android:scaleType</code> ,要用 <code>fresco:actualImageScaleType</code> 代替.</a></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>4.okhttp</p>
+<ul>
+<li>1.<a href="https://github.com/square/okhttp" target="_blank" rel="noopener">GitHub 地址</a></li>
+<li>2.<a href="https://www.jianshu.com/p/c478d7a20d03" target="_blank" rel="noopener">Android OkHttp的基本用法</a></li>
+</ul>
+</li>
+<li><p>5.Gson</p>
+<ul>
+<li><a href="https://www.jianshu.com/p/886f7b7fca7d" target="_blank" rel="noopener">1.用法1</a></li>
+<li><a href="https://www.jianshu.com/p/e740196225a4" target="_blank" rel="noopener">2.用法2</a></li>
+<li><a href="https://github.com/google/gson" target="_blank" rel="noopener">3.GitHub 源代码</a></li>
+<li>4.混淆代码:</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#---------------Begin: proguard configuration for Gson  ----------</span><br><span class="line"># Gson uses generic type information stored in a class file when working with fields. Proguard</span><br><span class="line"># removes such information by default, so configure it to keep all of it.</span><br><span class="line">-keepattributes Signature</span><br><span class="line"># For using GSON @Expose annotation</span><br><span class="line">-keepattributes *Annotation*</span><br><span class="line"># Gson specific classes</span><br><span class="line">-dontwarn sun.misc.**</span><br><span class="line">#-keep class com.google.gson.stream.** &#123; *; &#125;</span><br><span class="line"># Application classes that will be serialized/deserialized over Gson</span><br><span class="line">-keep class com.google.gson.examples.android.model.** &#123; *; &#125;</span><br><span class="line"># Prevent proguard from stripping interface information from TypeAdapterFactory,</span><br><span class="line"># JsonSerializer, JsonDeserializer instances (so they can be used in @JsonAdapter)</span><br><span class="line">-keep class * implements com.google.gson.TypeAdapterFactory</span><br><span class="line">-keep class * implements com.google.gson.JsonSerializer</span><br><span class="line">-keep class * implements com.google.gson.JsonDeserializer</span><br></pre></td></tr></table></figure>
+<h5 id="2-其它相关"><a href="#2-其它相关" class="headerlink" title="2.其它相关"></a>2.其它相关</h5><ul>
+<li><ol>
+<li>滚动选择器(com.bigkoo.pickerview)<ul>
+<li><a href="https://github.com/Bigkoo/Android-PickerView" target="_blank" rel="noopener">1.GitHub 地址</a></li>
+<li><a href="http://www.jianshu.com/p/bdbe1dd7926c" target="_blank" rel="noopener">2.Android仿ios条件选择器pickerview</a></li>
+<li><a href="https://github.com/Bigkoo/Android-PickerView/issues/544" target="_blank" rel="noopener">3.proguard 不用提供</a></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>5.一键生成 View 与 Activity 的代码链接</p>
+<blockquote>
+<p>‘com.jakewharton:butterknife:8.8.1’</p>
+<p><a href="https://github.com/JakeWharton/butterknife" target="_blank" rel="noopener">https://github.com/JakeWharton/butterknife</a></p>
+<p><a href="http://www.jianshu.com/p/390677e35048" target="_blank" rel="noopener">http://www.jianshu.com/p/390677e35048</a></p>
+</blockquote>
+</li>
+<li><p>6.简化信息订阅的方法.</p>
+<blockquote>
+<p>‘org.greenrobot:eventbus:3.1.1’</p>
+<p><a href="https://github.com/greenrobot/EventBus" target="_blank" rel="noopener">https://github.com/greenrobot/EventBus</a></p>
+<p><a href="http://www.jianshu.com/p/bd645ace4f73" target="_blank" rel="noopener">http://www.jianshu.com/p/bd645ace4f73</a></p>
+</blockquote>
+</li>
+<li><p>8.图片的选择器</p>
+<blockquote>
+<p><a href="https://github.com/crazycodeboy/TakePhoto" target="_blank" rel="noopener">https://github.com/crazycodeboy/TakePhoto</a></p>
+</blockquote>
+</li>
+<li><p>9.Bugly Crash report </p>
+<ul>
+<li><a href="https://github.com/BuglyDevTeam" target="_blank" rel="noopener">1.GitHub 地址</a></li>
+<li><a href="https://bugly.qq.com/v2/" target="_blank" rel="noopener">2.官方文档</a></li>
+<li><a href="https://buglydevteam.github.io/" target="_blank" rel="noopener">3.Bugly技术团队博客</a></li>
+<li><a href="http://blog.tian.tianlovezhen.site/2018/02/08/bugly%E9%9B%86%E6%88%90/" target="_blank" rel="noopener">4.Android 个人集成的例子</a></li>
+<li><a href="https://bugly.qq.com/docs/user-guide/instruction-manual-android/?v=20180709165613" target="_blank" rel="noopener">5.混淆代码</a></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-dontwarn com.tencent.bugly.**</span><br><span class="line">-keep public class com.tencent.bugly.**&#123;*;&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>10.免 root 查看 db 信息 (facebook stetho)<ul>
+<li><a href="https://github.com/facebook/stetho" target="_blank" rel="noopener">1.Stetho GitHub 地址</a></li>
+<li><a href="https://ghzjtian.github.io/2017/12/15/Android_%E5%85%8Droot%E6%9F%A5%E7%9C%8BDB/" target="_blank" rel="noopener">2.个人使用心得及教程</a></li>
+<li>3.混淆代码</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Stetho</span><br><span class="line">-keep class com.facebook.stetho.** &#123; *; &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>11.自定义 Toast 显示(有 icon)<ul>
+<li><a href="https://github.com/GrenderG/Toasty" target="_blank" rel="noopener">1.GitHub 地址</a></li>
+<li>2.混淆代码</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Toasty</span><br><span class="line">-keep class es.dmoral.toasty.** &#123; *; &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>12.自定义的 Logger 显示<ul>
+<li><a href="https://github.com/orhanobut/logger" target="_blank" rel="noopener">1.orhanobut logger GitHub 地址</a></li>
+<li>2.混淆代码:</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Logger</span><br><span class="line">-keep class com.orhanobut.logger.** &#123; *; &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>13.下拉刷新控件 SmartRefreshLayout</p>
+<ul>
+<li><a href="https://github.com/scwang90/SmartRefreshLayout" target="_blank" rel="noopener">1.GitHub 地址</a></li>
+<li><a href="https://segmentfault.com/a/1190000010066071" target="_blank" rel="noopener">2.教程</a></li>
+<li><a href="https://github.com/scwang90/SmartRefreshLayout#%E6%B7%B7%E6%B7%86" target="_blank" rel="noopener">3.官方介绍说不用混淆</a></li>
+</ul>
+</li>
+<li><p>14.DataBase</p>
+<ul>
+<li>1.Realm(以前用过，发现有坑,现在观望中)<ul>
+<li><a href="https://realm.io/cn/docs/java/latest" target="_blank" rel="noopener">1.官网中文文档(不是最新)</a></li>
+<li><a href="https://realm.io/docs/java/latest" target="_blank" rel="noopener">2.官网英文文档</a></li>
+<li><a href="https://www.zhihu.com/question/30298585" target="_blank" rel="noopener">3.怎样看待 Realm 这个移动数据库？</a></li>
+<li><a href="https://www.jianshu.com/p/50e0efb66bdf" target="_blank" rel="noopener">4.Realm数据库 从入门到“放弃”</a></li>
+<li><a href="http://blog.tian.tianlovezhen.site/2018/07/30/Android_Realm%E7%9A%84%E4%BD%BF%E7%94%A8/#more" target="_blank" rel="noopener">5.个人的简单开发分享</a></li>
+</ul>
+</li>
+<li>2.SQLite<ul>
+<li>1.sqlitebrowser(SQLite 的工具)<ul>
+<li><a href="https://github.com/sqlitebrowser/sqlitebrowser" target="_blank" rel="noopener">1.GitHub 源码</a></li>
+<li><a href="https://sqlitebrowser.org/" target="_blank" rel="noopener">2.官网(MacOS 上会闪退，暂时运行不了)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>15.Dialog</p>
+<ul>
+<li><a href="https://github.com/afollestad/material-dialogs" target="_blank" rel="noopener">1.material-dialogs</a><ul>
+<li><a href="https://aidanfollestad.com/" target="_blank" rel="noopener">1.作者(Aidan Follestad)是个 95 后的牛人</a></li>
+<li>2.不用另外配置 <code>proguard</code> 的信息.</li>
+<li>3.强大的 <code>Dialog</code> 第三方包,基本上所有的 <code>Dialog</code> 用到的功能，这里都有了!!</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>16.权限申请</p>
+<ul>
+<li><a href="https://github.com/tbruyelle/RxPermissions" target="_blank" rel="noopener">1.RxPermissions</a><ul>
+<li><a href="https://github.com/tbruyelle/RxPermissions/issues/45" target="_blank" rel="noopener">1.Proguard 混淆</a><br><code>-dontwarn com.tbruyelle.rxpermissions.**</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a href="https://github.com/Rukey7/MvpApp" target="_blank" rel="noopener">17.Android MVP Architecture Study</a></p>
+<ul>
+<li>1.里面有用到大量的第三方库.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="3-Android-自带"><a href="#3-Android-自带" class="headerlink" title="3.Android 自带"></a>3.Android 自带<a name="self_android_view"></a></h3><ul>
+<li>1.BottomNavigationView <ul>
+<li>1.Android 自带控件，类似于 ListView.但是有 List 和 Grid 的效果.</li>
+</ul>
+</li>
+<li><p><a href="https://stackoverflow.com/questions/3656371/dynamic-string-using-string-xml" target="_blank" rel="noopener">2.Android xml 字符串格式化</a></p>
+</li>
+<li><p>3.SearchView </p>
+<ul>
+<li><a href="https://www.jianshu.com/p/00cb87a2964f" target="_blank" rel="noopener">1.SearchView的使用</a></li>
+<li><a href="https://developer.android.com/reference/android/support/v7/widget/SearchView" target="_blank" rel="noopener">2.官方文档</a></li>
+<li><a href="http://tangpj.com/2016/09/11/searchview/" target="_blank" rel="noopener">3.Android SearchView的高级用法，解决关于SearchView的样式与控制问题</a></li>
+</ul>
+</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='blog-comments'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
+        data-d=''
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1573019751/TriDiamond_logo_ui_xeublz.jpg" height=300 width=300></img>
+                    <p>Tim</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        <dd><a href="https://github.com/TriDiamond" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/TriDiamond6" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="https://stackoverflow.com/users/7602324/tridiamond?tab=profile" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">89 <p>Articles</p></a></li>
+                    <li><a href="/categories">26 <p>Categories</p></a></li>
+                    <li><a href="/tags">23 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Android-APP基本组件"><span class="toc-number">1.</span> <span class="toc-text">Android APP基本组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-通用开发"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.通用开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Android-所用的外部库"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.Android 所用的外部库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Android-自带的-View"><span class="toc-number">1.0.3.</span> <span class="toc-text">3.Android 自带的 View</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-通用开发-1"><span class="toc-number">1.0.4.</span> <span class="toc-text">1.通用开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Android-所用的外部库-1"><span class="toc-number">1.0.5.</span> <span class="toc-text">2.Android 所用的外部库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Android-自带"><span class="toc-number">1.0.6.</span> <span class="toc-text">3.Android 自带</span></a></li></ol></li></ol></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2020
+        <span class="gradient-text">
+            Tim
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+    <script src="/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149874671-1');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>

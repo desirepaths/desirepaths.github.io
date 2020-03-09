@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+<html lang="中文" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Angular 多语言框架 ngx-translate 的使用 - desirepaths 的博客</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="个人目标：随性而为!.,
+记录 Angular ngx-translate 多语言框架的使用方法
+
+
+1.参考2.小工具3.翻译4.错误处理5.多语言的页面实现6.复数形式的处理
+
+
+1.参考
+1.ngx-translat,"> 
+    <meta name="author" content="Tim"> 
+    <link rel="alternative" href="atom.xml" title="desirepaths 的博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
+    <link rel="stylesheet" href="/css/ball-atom.min.css">
+</head>
+</html>
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">desirepaths 的博客</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://yoursite.com">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">Angular 多语言框架 ngx-translate 的使用</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg) ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/Angular"><b>「
+                    </b>ANGULAR<b> 」</b></a>
+                
+                February 03, 2020
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2020/02/03/Angular_ngx-translate使用方法/" title="Angular 多语言框架 ngx-translate 的使用">Angular 多语言框架 ngx-translate 的使用</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    29k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    27 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Angular/">Angular</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <blockquote>
+<p>记录 Angular ngx-translate 多语言框架的使用方法</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="1-参考"><a href="#1-参考" class="headerlink" title="1.参考"></a>1.<a href="#refenences">参考</a></h2><h2 id="2-小工具"><a href="#2-小工具" class="headerlink" title="2.小工具"></a>2.<a href="#translate_tools">小工具</a></h2><h2 id="3-翻译"><a href="#3-翻译" class="headerlink" title="3.翻译"></a>3.<a href="#translate">翻译</a></h2><h2 id="4-错误处理"><a href="#4-错误处理" class="headerlink" title="4.错误处理"></a>4.<a href="#error_process">错误处理</a></h2><h2 id="5-多语言的页面实现"><a href="#5-多语言的页面实现" class="headerlink" title="5.多语言的页面实现"></a>5.<a href="#multi_lang_imprements">多语言的页面实现</a></h2><h2 id="6-复数形式的处理"><a href="#6-复数形式的处理" class="headerlink" title="6.复数形式的处理"></a>6.<a href="#one_more">复数形式的处理</a></h2><hr>
+<hr>
+<hr>
+<h2 id="1-参考-1"><a href="#1-参考-1" class="headerlink" title="1.参考"></a>1.参考<a name="refenences"></a></h2><ul>
+<li>1.<a href="https://github.com/ngx-translate/core" target="_blank" rel="noopener">ngx-translate/core</a></li>
+<li>2.<a href="https://www.codeandweb.com/babeledit/tutorials/how-to-translate-your-angular7-app-with-ngx-translate" target="_blank" rel="noopener">How to translate your Angular 7 app with ngx-translate</a></li>
+<li>3.<a href="https://alligator.io/angular/ngx-translate/" target="_blank" rel="noopener">Internationalize Your Angular App with ngx-translate</a></li>
+<li>4.<a href="https://github.com/ngx-translate/core/issues/517#issuecomment-299637956" target="_blank" rel="noopener">safely use translate.instant() #517</a></li>
+<li>5.<a href="https://github.com/ngx-translate/core/issues/517" target="_blank" rel="noopener">safely use translate.instant()</a></li>
+</ul>
+<h2 id="2-小工具-1"><a href="#2-小工具-1" class="headerlink" title="2.小工具"></a>2.小工具<a name="translate_tools"></a></h2><ul>
+<li>1.<a href="https://www.codeandweb.com/babeledit" target="_blank" rel="noopener">BabelEdit(要收费)</a> -&gt; ‘BabelEdit is the translation editor for your ngx-translate project.’</li>
+<li>2.<a href="https://poedit.net" target="_blank" rel="noopener">poedit(免费)(不能编辑 json 文件)</a> -&gt; Powerful and intuitive translation editor</li>
+<li>3.<a href="https://translation-manager-86c3d.firebaseapp.com/" target="_blank" rel="noopener">在线多语言 json 编辑工具</a></li>
+<li>4.<a href="https://github.com/biesbjerg/ngx-translate-extract" target="_blank" rel="noopener">ngx-translate-extract</a> -&gt; 可以把在 <code>Html</code> 和 <code>Typescript</code> 文件上用到的 翻译 自动转换到 <code>xx.json</code> 文件中.</li>
+<li>5.<a href="https://github.com/Greentube/localize-router" target="_blank" rel="noopener">localize-router</a> -&gt; 语言改变时 URL 也会跟着变化.</li>
+</ul>
+<h2 id="3-翻译-1"><a href="#3-翻译-1" class="headerlink" title="3.翻译"></a>3.翻译<a name="translate"></a></h2><ul>
+<li>1.翻译文件为:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// en.json</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">  &quot;welcomeMessage&quot;: &quot;Thanks for joining, &#123;&#123; firstName &#125;&#125;! It&apos;s great to have you!&quot;,</span><br><span class="line">  &quot;loginPrompt&quot;: &quot;Please login&quot;,</span><br><span class="line">  &quot;login&quot;: &#123;</span><br><span class="line">    &quot;username&quot;: &quot;Enter your user name&quot;,</span><br><span class="line">    &quot;password&quot;: &quot;Password here&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;buttonTx&quot;: &quot;click this button&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>1.在 html 中的翻译</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;button (click)=&quot;buttonClickAction()&quot; &gt;&#123;&#123;buttonText&#125;&#125;&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 元素 文字的翻译 --&gt;</span><br><span class="line">&lt;p&gt;&#123;&#123; &apos;welcomeMessage&apos; | translate:user &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;!-- 元素 的属性 --&gt;</span><br><span class="line">&lt;input title=&quot;&#123;&#123; &apos;login.password&apos; | translate &#125;&#125;&quot; type=&quot;password&quot; placeholder=&quot;&#123;&#123; &apos;login.password&apos; | translate &#125;&#125;&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;hr&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;!-- &apos;元素 文字的翻译&apos; 的另外两种做法 --&gt;</span><br><span class="line">&lt;label translate=&apos;login.username&apos;&gt;&lt;/label&gt;</span><br><span class="line">&lt;p translate [translateParams]=&quot;&#123; firstName: user.firstName &#125;&quot;&gt;welcomeMessage&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>2.在代码中的翻译</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">import &#123;Component, OnInit&#125; from &apos;@angular/core&apos;;</span><br><span class="line">import &#123;TranslateService&#125; from &apos;@ngx-translate/core&apos;;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: &apos;app-root&apos;,</span><br><span class="line">  templateUrl: &apos;./app.component.html&apos;,</span><br><span class="line">  styleUrls: [&apos;./app.component.css&apos;]</span><br><span class="line">&#125;)</span><br><span class="line">export class AppComponent implements OnInit&#123;</span><br><span class="line"></span><br><span class="line">  user: &#123; firstName: string, lastName: string &#125;;</span><br><span class="line">  welcome: string;</span><br><span class="line">  loginPrompt: string;</span><br><span class="line">  usernameLabel: string;</span><br><span class="line">  passwordLabel: string;</span><br><span class="line"></span><br><span class="line">  buttonText = &quot;点击666&quot;;</span><br><span class="line"></span><br><span class="line">  constructor(private translate: TranslateService) &#123;</span><br><span class="line">    console.log(&apos;constructor&apos;);</span><br><span class="line"></span><br><span class="line">    translate.addLangs([&apos;en&apos;, &apos;klingon&apos;])</span><br><span class="line">    translate.setDefaultLang(&apos;en&apos;);</span><br><span class="line">    translate.use(&apos;en&apos;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit() &#123;</span><br><span class="line">    this.user = &#123;firstName: &quot;Tian1&quot;, lastName: &quot;Zeng1&quot;&#125;;</span><br><span class="line"></span><br><span class="line">    // synchronous. Also interpolate the &apos;firstName&apos; parameter with a value</span><br><span class="line">    // 这里只会分别得到 &apos;welcomeMessage&apos;,&apos;loginPrompt&apos;,&apos;buttonTx&apos;, 不会得到真正翻译的结果.</span><br><span class="line">    this.welcome = this.translate.instant(&apos;welcomeMessage&apos;, &#123;firstName: this.user.firstName&#125;);</span><br><span class="line">    this.loginPrompt = this.translate.instant(&apos;loginPrompt&apos;);</span><br><span class="line">    this.buttonText = this.translate.instant(&apos;buttonTx&apos;);</span><br><span class="line"></span><br><span class="line">    // asynchronous - gets translations then completes.</span><br><span class="line">    // 这里可以顺利得到结果</span><br><span class="line">    this.translate.get([&apos;login.username&apos;, &apos;login.password&apos;, &apos;buttonTx&apos;])</span><br><span class="line">      .subscribe(translations =&gt; &#123;</span><br><span class="line">        this.buttonText = translations[&apos;buttonTx&apos;];</span><br><span class="line">        this.usernameLabel = translations[&apos;login.username&apos;];</span><br><span class="line">        this.passwordLabel = translations[&apos;login.password&apos;];</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  buttonClickAction() &#123;</span><br><span class="line">    this.user = &#123;firstName: &quot;Tian2&quot;, lastName: &quot;Zeng2&quot;&#125;;</span><br><span class="line"></span><br><span class="line">    // 这里可以得到想要的翻译结果</span><br><span class="line">    this.welcome = this.translate.instant(&apos;welcomeMessage&apos;, &#123;firstName: this.user.firstName&#125;);</span><br><span class="line">    this.loginPrompt = this.translate.instant(&apos;loginPrompt&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>效果显示:</p>
+<p><img src="http://pic.pgyjz.cn/blog/Angular/multiLanguages/Snip20200215_2.png" alt></p>
+<h2 id="4-错误处理-1"><a href="#4-错误处理-1" class="headerlink" title="4.错误处理"></a>4.错误处理<a name="error_process"></a></h2><h4 id="1-翻译文件中没有这个翻译-key-的情况"><a href="#1-翻译文件中没有这个翻译-key-的情况" class="headerlink" title="1.翻译文件中没有这个翻译 key 的情况."></a>1.翻译文件中没有这个翻译 key 的情况.</h4><ul>
+<li>1.Html: 翻译的文本只会显示这个 key.</li>
+<li>2.Typescript: 翻译的文本为: undefine<h4 id="2-翻译文件没有的情况"><a href="#2-翻译文件没有的情况" class="headerlink" title="2.翻译文件没有的情况."></a>2.翻译文件没有的情况.</h4></li>
+<li>会报     <code>GET http://localhost:4200/assets/i18n/cn.json 404 (Not Found)</code> 错误.</li>
+</ul>
+<h4 id="3-this-translate-instant-一直返回-key-的问题"><a href="#3-this-translate-instant-一直返回-key-的问题" class="headerlink" title="3.this.translate.instant 一直返回 key 的问题."></a>3.<code>this.translate.instant</code> 一直返回 key 的问题.</h4><ul>
+<li><p>1.原因: 这是因为 翻译文件还没有加载完毕，所以用 同步的方法 <code>translate.instant</code> 不能获取到 value.</p>
+</li>
+<li><p>2.解决方法</p>
+<ul>
+<li>1: 用 异步方法 get 去实现</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">translate.get(&quot;lessons_title&quot;).subscribe((result: string) =&gt; &#123;</span><br><span class="line">        lesson.title = result;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>2.在项目加载时就加载全部的翻译文本,具体做法是在 AppModule 中添加以下代码:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">@NgModule(&#123;</span><br><span class="line"></span><br><span class="line">  providers: [  &#123;</span><br><span class="line">    provide: APP_INITIALIZER,</span><br><span class="line">    useFactory: appInitializerFactory,</span><br><span class="line">    deps: [TranslateService, Injector],</span><br><span class="line">    multi: true</span><br><span class="line">  &#125;],</span><br><span class="line">  bootstrap: [AppComponent]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">export function appInitializerFactory(translate: TranslateService, injector: Injector) &#123;</span><br><span class="line">  return () =&gt; new Promise&lt;any&gt;((resolve: any) =&gt; &#123;</span><br><span class="line">    const locationInitialized = injector.get(LOCATION_INITIALIZED, Promise.resolve(null));</span><br><span class="line">    locationInitialized.then(() =&gt; &#123;</span><br><span class="line"></span><br><span class="line">      translate.addLangs([&apos;en&apos;, &apos;de&apos;, &apos;zh&apos;])</span><br><span class="line">      translate.setDefaultLang(&apos;en&apos;);</span><br><span class="line">      const browerLang = translate.getBrowserLang();</span><br><span class="line">      const langToSet = browerLang.match(/en|de|zh/)? browerLang: &apos;en&apos;;</span><br><span class="line">      translate.use(langToSet).subscribe(() =&gt; &#123;</span><br><span class="line">        console.info(`Successfully initialized &apos;$&#123;langToSet&#125;&apos; language.&apos;`);</span><br><span class="line">      &#125;, err =&gt; &#123;</span><br><span class="line">        console.error(`Problem with &apos;$&#123;langToSet&#125;&apos; language initialization.&apos;`);</span><br><span class="line">      &#125;, () =&gt; &#123;</span><br><span class="line">        resolve(null);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="5-多语言切换的实现"><a href="#5-多语言切换的实现" class="headerlink" title="5.多语言切换的实现"></a>5.多语言切换的实现<a name="multi_lang_imprements"></a></h2><h4 id="1-下拉选择框切换语言"><a href="#1-下拉选择框切换语言" class="headerlink" title="1.下拉选择框切换语言"></a>1.下拉选择框切换语言</h4><ul>
+<li>1.代码如下所示</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// AppComponent</span><br><span class="line"></span><br><span class="line">  currentLang : string;</span><br><span class="line">  constructor(private translate: TranslateService) &#123;</span><br><span class="line">    translate.addLangs([&apos;en&apos;, &apos;de&apos;])</span><br><span class="line">    translate.setDefaultLang(&apos;en&apos;);</span><br><span class="line">    </span><br><span class="line">    this.currentLang = &quot;en&quot;;</span><br><span class="line">  &#125;</span><br><span class="line">  ngOnInit() &#123;</span><br><span class="line">   this.translate.onLangChange.subscribe((event: LangChangeEvent) =&gt; &#123;</span><br><span class="line">        console.log(&apos;onLangChange event:&apos;+ event.lang);</span><br><span class="line">        this.currentLang = event.lang;</span><br><span class="line">    &#125;);</span><br><span class="line">    this.translate.onTranslationChange.subscribe((event: TranslationChangeEvent) =&gt; &#123;</span><br><span class="line">      console.log(&apos;onTranslationChange event:&apos;+ event.translations);</span><br><span class="line">    &#125;);</span><br><span class="line">    this.translate.onDefaultLangChange.subscribe((event: DefaultLangChangeEvent) =&gt; &#123;</span><br><span class="line">      console.log(&apos;onDefaultLangChange event:&apos;+ event.lang);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  languageChangeEvent(lang: string) &#123;</span><br><span class="line">    console.log(&quot;lang select:&quot;+lang);</span><br><span class="line">    this.translate.use(lang);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// Html file</span><br><span class="line"></span><br><span class="line">&lt;h3&gt;当前的语言为: &#123;&#123;currentLang&#125;&#125;&lt;/h3&gt;</span><br><span class="line">&lt;select (change)=&quot;languageChangeEvent($event.target.value)&quot; &gt;</span><br><span class="line">  &lt;option *ngFor=&quot;let lang of this.translate.getLangs()&quot; [value]=&quot;lang&quot;&gt;&#123;&#123;lang&#125;&#125;&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<p>效果显示:<br><img src="http://pic.pgyjz.cn/blog/Angular/multiLanguages/lang-change.gif" alt></p>
+<ul>
+<li>2.但是如果程序有很多个 Module, 在子 Module 下设置 <code>translate.use(lang)</code> 的话其它的 module 会得不到响应，有个暴力的方法就是重新刷新整个页面就可以解决这个问题:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">this.currentSelectLang = currentLang;</span><br><span class="line">this.translate.use(currentLang);</span><br><span class="line"></span><br><span class="line">// window.location.pathname:  &apos;/en/dashboard/mower&apos; , &apos;/&apos;</span><br><span class="line"></span><br><span class="line">//  window.location.href:  &apos;http://localhost:4200/en/dashboard/mower&apos; , &apos;http://localhost:4200/&apos;</span><br><span class="line">var currentPathName = window.location.pathname;</span><br><span class="line">// 1.Check pathname contain en\zh\fr</span><br><span class="line">const urlLang = this.getLangFromPath(currentPathName);</span><br><span class="line">const urlHasLang = !urlLang.match(/en|zh|fr/) ;</span><br><span class="line"></span><br><span class="line">if( !urlHasLang ) &#123;</span><br><span class="line">  // 2.If contain, then replace the old language to new language</span><br><span class="line"></span><br><span class="line">  currentPathName = currentPathName.replace(urlLang,currentLang);</span><br><span class="line">&#125; else &#123;</span><br><span class="line">  // 3.Else , add the new language to the path name</span><br><span class="line">  currentPathName = `/$&#123;currentLang&#125;$&#123;currentPathName&#125;`;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">this.route.navigate([currentPathName]) .then(() =&gt; &#123;</span><br><span class="line">  window.location.reload();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="2-URL-切换语言"><a href="#2-URL-切换语言" class="headerlink" title="2.URL 切换语言"></a>2.URL 切换语言</h4><h5 id="1-this-translate-currentLang-不生效"><a href="#1-this-translate-currentLang-不生效" class="headerlink" title="1.this.translate.currentLang 不生效 !!!"></a>1.<code>this.translate.currentLang</code> 不生效 !!!</h5><pre><code>* 需要设置 `translate.use(&apos;en&apos;);` 后， `this.translate.currentLang ` 才生效.
+</code></pre><h5 id="2-所实现的效果有"><a href="#2-所实现的效果有" class="headerlink" title="2.所实现的效果有:"></a>2.所实现的效果有:</h5><pre><code>* 1.访问 http://localhost:4200/de/login 会显示德语.
+* 2.下拉选择了语言后， URL 会变化，如从 login 页面的 en 选择了 de 后,  URL 从 http://localhost:4200/login 变为 http://localhost:4200/de/login .
+</code></pre><h5 id="3-实现步骤"><a href="#3-实现步骤" class="headerlink" title="3.实现步骤:"></a>3.实现步骤:</h5><ul>
+<li>1.在 <code>AppModule</code> 添加一个 <code>providers</code>,如下面代码所示(逻辑就是为一开始加载程序时，就拿到 URL 上的所显示的语言,然后跟据这个语言去设置程序的语言):</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">	providers: [</span><br><span class="line">        &#123;</span><br><span class="line">            provide: APP_INITIALIZER,</span><br><span class="line">            useFactory: appInitializerFactory,</span><br><span class="line">            deps: [TranslateService, Injector],</span><br><span class="line">            multi: true</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    export function appInitializerFactory(translate: TranslateService, injector: Injector) &#123;</span><br><span class="line">    return () =&gt; new Promise&lt;any&gt;((resolve: any) =&gt; &#123;</span><br><span class="line">        const locationInitialized = injector.get(LOCATION_INITIALIZED, Promise.resolve(null));</span><br><span class="line">        locationInitialized.then(() =&gt; &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            translate.addLangs([&apos;en&apos;,&apos;zh&apos;]);</span><br><span class="line">            // Set defaultLang to en</span><br><span class="line">            translate.setDefaultLang(&apos;en&apos;);</span><br><span class="line"></span><br><span class="line">          const pathName = window.location.pathname;</span><br><span class="line">          const urlLang = getLangFromPath(pathName);</span><br><span class="line"></span><br><span class="line">          // Get default browser language</span><br><span class="line">            // const browserLang = translate.getBrowserLang();</span><br><span class="line"></span><br><span class="line">            const langToSet = urlLang.match(/en|zh/)? urlLang: &apos;en&apos;;</span><br><span class="line">            translate.use(langToSet).subscribe(() =&gt; &#123;</span><br><span class="line">                console.info(`Successfully initialized &apos;$&#123;langToSet&#125;&apos; language.&apos;`);</span><br><span class="line">            &#125;, err =&gt; &#123;</span><br><span class="line">                console.error(`Problem with &apos;$&#123;langToSet&#125;&apos; language initialization.&apos;`);</span><br><span class="line">            &#125;, () =&gt; &#123;</span><br><span class="line">                resolve(null);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> *</span><br><span class="line"> * @param pathName, &apos;/&apos; or &apos;/zh&apos; or &apos;/zh/tools/mower/rlm1-repair-tool&apos;</span><br><span class="line"> */</span><br><span class="line">function getLangFromPath(pathName: string): string &#123;</span><br><span class="line">  const slashIndex = pathName.indexOf(&quot;/&quot;,1);</span><br><span class="line">  if (slashIndex == -1) &#123;</span><br><span class="line">    return pathName.substring(1, pathName.length)</span><br><span class="line">  &#125;</span><br><span class="line">  return pathName.substring(1, slashIndex);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-跟随浏览器的语言去改变-Web-APP-的语言"><a href="#3-跟随浏览器的语言去改变-Web-APP-的语言" class="headerlink" title="3.跟随浏览器的语言去改变 Web APP 的语言"></a>3.跟随浏览器的语言去改变 Web APP 的语言</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">constructor(private translate: TranslateService, private router: Router) &#123;</span><br><span class="line"> </span><br><span class="line">   translate.addLangs([&apos;en&apos;, &apos;de&apos;, &apos;zh&apos;])</span><br><span class="line">   translate.setDefaultLang(&apos;en&apos;);</span><br><span class="line">   const browerCurLang = translate.getBrowserCultureLang();</span><br><span class="line">   const browerLang = translate.getBrowserLang();</span><br><span class="line">   translate.use(browerLang.match(/en|de|zh/)? browerLang: &apos;en&apos;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="6-复数形式的处理-1"><a href="#6-复数形式的处理-1" class="headerlink" title="6.复数形式的处理"></a>6.复数形式的处理<a name="one_more"></a></h2>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='blog-comments'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
+        data-d=''
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1573019751/TriDiamond_logo_ui_xeublz.jpg" height=300 width=300></img>
+                    <p>Tim</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        <dd><a href="https://github.com/TriDiamond" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/TriDiamond6" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="https://stackoverflow.com/users/7602324/tridiamond?tab=profile" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">89 <p>Articles</p></a></li>
+                    <li><a href="/categories">26 <p>Categories</p></a></li>
+                    <li><a href="/tags">23 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-参考"><span class="toc-number">1.</span> <span class="toc-text">1.参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-小工具"><span class="toc-number">2.</span> <span class="toc-text">2.小工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-翻译"><span class="toc-number">3.</span> <span class="toc-text">3.翻译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-错误处理"><span class="toc-number">4.</span> <span class="toc-text">4.错误处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-多语言的页面实现"><span class="toc-number">5.</span> <span class="toc-text">5.多语言的页面实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-复数形式的处理"><span class="toc-number">6.</span> <span class="toc-text">6.复数形式的处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-参考-1"><span class="toc-number">7.</span> <span class="toc-text">1.参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-小工具-1"><span class="toc-number">8.</span> <span class="toc-text">2.小工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-翻译-1"><span class="toc-number">9.</span> <span class="toc-text">3.翻译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-错误处理-1"><span class="toc-number">10.</span> <span class="toc-text">4.错误处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-多语言切换的实现"><span class="toc-number">11.</span> <span class="toc-text">5.多语言切换的实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-复数形式的处理-1"><span class="toc-number">12.</span> <span class="toc-text">6.复数形式的处理</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2020
+        <span class="gradient-text">
+            Tim
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+    <script src="/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149874671-1');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>

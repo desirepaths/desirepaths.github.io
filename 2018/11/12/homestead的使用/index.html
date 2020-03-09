@@ -1,0 +1,476 @@
+
+<!DOCTYPE html>
+<html lang="中文" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Homestead 的使用 - desirepaths 的博客</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="个人目标：随性而为!.,
+主要记录下 Homestead 的使用方法
+
+
+1.参考2.ssh 连接3.上传文件到服务器4.mysql 的操作5.MongoDB 的安装6.相关的问题
+
+
+1.参考
+1.Laravel Hom,"> 
+    <meta name="author" content="Tim"> 
+    <link rel="alternative" href="atom.xml" title="desirepaths 的博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
+    <link rel="stylesheet" href="/css/ball-atom.min.css">
+</head>
+</html>
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">desirepaths 的博客</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://yoursite.com">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">Homestead 的使用</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg) ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/php"><b>「
+                    </b>PHP<b> 」</b></a>
+                
+                November 12, 2018
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2018/11/12/homestead的使用/" title="Homestead 的使用">Homestead 的使用</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    20k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    18 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/php/">php</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <blockquote>
+<p>主要记录下 <code>Homestead</code> 的使用方法</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="1-参考"><a href="#1-参考" class="headerlink" title="1.参考"></a><a href="#referances">1.参考</a></h2><h2 id="2-ssh-连接"><a href="#2-ssh-连接" class="headerlink" title="2.ssh 连接"></a><a href="#ssh_connect">2.ssh 连接</a></h2><h2 id="3-上传文件到服务器"><a href="#3-上传文件到服务器" class="headerlink" title="3.上传文件到服务器"></a><a href="#upload_file">3.上传文件到服务器</a></h2><h2 id="4-mysql-的操作"><a href="#4-mysql-的操作" class="headerlink" title="4.mysql 的操作"></a><a href="#mysql_usage">4.mysql 的操作</a></h2><h2 id="5-MongoDB-的安装"><a href="#5-MongoDB-的安装" class="headerlink" title="5.MongoDB 的安装"></a><a href="#mongoDB_install">5.MongoDB 的安装</a></h2><h2 id="6-相关的问题"><a href="#6-相关的问题" class="headerlink" title="6.相关的问题"></a><a href="#related_issues">6.相关的问题</a></h2><hr>
+<hr>
+<hr>
+<h2 id="1-参考-1"><a href="#1-参考-1" class="headerlink" title="1.参考"></a>1.参考<a name="referances"></a></h2><ul>
+<li><a href="https://laravel-china.org/docs/laravel/5.7/homestead/2245#8875b6" target="_blank" rel="noopener">1.Laravel Homestead 5.7 中文文档</a></li>
+</ul>
+<hr>
+<h2 id="2-ssh-连接-1"><a href="#2-ssh-连接-1" class="headerlink" title="2.ssh 连接"></a>2.ssh 连接<a name="ssh_connect"></a></h2><ul>
+<li>1.在项目的目录下面，可以用 <code>vagrant ssh</code> 去进入到 Linux 虚拟机下面.</li>
+<li>2.在其他的路径的时候，通过 <code>ssh vagrant@192.168.10.10</code> 去连接,<a href="https://stackoverflow.com/questions/29450404/is-there-a-default-password-to-connect-to-vagrant-when-using-homestead-ssh-for" target="_blank" rel="noopener">详细参考这里</a>.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">$ ssh vagrant@192.168.10.10</span><br><span class="line">Welcome to Ubuntu 18.04.1 LTS (GNU/Linux 4.15.0-32-generic x86_64)</span><br><span class="line"></span><br><span class="line"> * Documentation:  https://help.ubuntu.com</span><br><span class="line"> * Management:     https://landscape.canonical.com</span><br><span class="line"> * Support:        https://ubuntu.com/advantage</span><br><span class="line"></span><br><span class="line">  System information as of Mon Nov 12 11:58:32 UTC 2018</span><br><span class="line"></span><br><span class="line">  System load:  0.0               Processes:           131</span><br><span class="line">  Usage of /:   9.6% of 61.80GB   Users logged in:     1</span><br><span class="line">  Memory usage: 21%               IP address for eth0: 10.0.2.15</span><br><span class="line">  Swap usage:   0%                IP address for eth1: 192.168.10.10</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">285 packages can be updated.</span><br><span class="line">96 updates are security updates.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Last login: Mon Nov 12 11:32:02 2018 from 10.0.2.2</span><br><span class="line">vagrant@httpdocs:~$ exit</span><br><span class="line">logout</span><br><span class="line">Connection to 192.168.10.10 closed.</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="3-上传文件到服务器-1"><a href="#3-上传文件到服务器-1" class="headerlink" title="3.上传文件到服务器"></a>3.上传文件到服务器<a name="upload_file"></a></h2><ul>
+<li><a href="https://www.cnblogs.com/no7dw/archive/2012/07/07/2580307.html" target="_blank" rel="noopener">1.利用 <code>scp</code> 去上传文件</a>:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ scp /Users/glb_gz/Desktop/smarttec.sql vagrant@192.168.10.10:/tmp</span><br><span class="line">smarttec.sql                                  100% 1556KB  54.1MB/s   00:00    </span><br><span class="line">glb-gzdeMacBook-Pro:~ glb_gz$</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="4-mysql-的操作-1"><a href="#4-mysql-的操作-1" class="headerlink" title="4.mysql 的操作"></a>4.mysql 的操作<a name="mysql_usage"></a></h2><ul>
+<li>1.用户名和密码分别为 <code>homestead</code>/<code>secret</code>,详见 <a href="https://laravel-china.org/docs/laravel/5.7/homestead/2245#connecting-via-ssh" target="_blank" rel="noopener">连接数据库</a>,相关的操作例子:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">vagrant@httpdocs:~$ mysql -u homestead -p</span><br><span class="line">Enter password: </span><br><span class="line">Welcome to the MySQL monitor.  Commands end with ; or \g.</span><br><span class="line">Your MySQL connection id is 5</span><br><span class="line">Server version: 5.7.23-0ubuntu0.18.04.1 (Ubuntu)</span><br><span class="line"></span><br><span class="line">Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.</span><br><span class="line"></span><br><span class="line">Oracle is a registered trademark of Oracle Corporation and/or its</span><br><span class="line">affiliates. Other names may be trademarks of their respective</span><br><span class="line">owners.</span><br><span class="line"></span><br><span class="line">Type &apos;help;&apos; or &apos;\h&apos; for help. Type &apos;\c&apos; to clear the current input statement.</span><br><span class="line"></span><br><span class="line">mysql&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="5-MongoDB-的安装-1"><a href="#5-MongoDB-的安装-1" class="headerlink" title="5.MongoDB 的安装"></a>5.MongoDB 的安装<a name="mongoDB_install"></a></h2><h4 id="1-参考-目前主要用-homestead-vagrant-去安装-mongodb"><a href="#1-参考-目前主要用-homestead-vagrant-去安装-mongodb" class="headerlink" title="1.参考(目前主要用 homestead vagrant 去安装 mongodb):"></a>1.参考(目前主要用 homestead vagrant 去安装 mongodb):</h4><ul>
+<li><a href="https://laravel-china.org/docs/laravel/5.7/homestead/2245#installing-mongodb" target="_blank" rel="noopener">1.HomeStead 中安装 MongoDB</a></li>
+<li><a href="https://medium.com/@williamvicary/installing-mongodb-on-homestead-3eb750dcc891" target="_blank" rel="noopener">2.Installing MongoDB on Homestead</a></li>
+<li><a href="http://www.runoob.com/mongodb/mongodb-intro.html" target="_blank" rel="noopener">3.PHP7 MongDB 安装与使用</a></li>
+<li><p><a href="https://silviu-s.com/mongodb-on-laravel-homestead-with-php-7/" target="_blank" rel="noopener">4.MongoDB on Laravel Homestead with PHP 7(主要参考这个)</a></p>
+</li>
+<li><p>5.其他的一些信息</p>
+<ul>
+<li><a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-enterprise-on-ubuntu/" target="_blank" rel="noopener">1.Install MongoDB Enterprise on Ubuntu</a></li>
+<li><a href="http://php.net/manual/zh/mongo.sqltomongo.php" target="_blank" rel="noopener">2.SQL 到 Mongo 的对应表 </a></li>
+<li><a href="http://php.net/manual/zh/set.mongodb.php" target="_blank" rel="noopener">3.MongoDB driver ¶</a></li>
+<li><a href="http://php.net/manual/en/mongodb.tutorial.library.php#mongodb.tutorial.library" target="_blank" rel="noopener">4.Using the PHP Library for MongoDB (PHPLIB) ¶</a></li>
+<li><a href="http://zetcode.com/db/mongodbphp/" target="_blank" rel="noopener">5.MongoDB PHP tutorial</a></li>
+<li><a href="https://medium.com/@matthagemann/how-to-install-mongodb-3-6-on-ubuntu-17-10-ac0bc225e648" target="_blank" rel="noopener">6.How to Install and Secure MongoDB 3.6 on Ubuntu 17.10</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="2-在-Homestead-yaml-中安装-mongodb"><a href="#2-在-Homestead-yaml-中安装-mongodb" class="headerlink" title="2.在 Homestead.yaml 中安装 mongodb :"></a>2.在 <code>Homestead.yaml</code> 中安装 <code>mongodb</code> :</h4><ul>
+<li>1.在 <code>Homestead.yaml</code> 中修改文件的配置,如:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">ip: 192.168.10.10</span><br><span class="line">memory: 2048</span><br><span class="line">cpus: 1</span><br><span class="line">provider: virtualbox</span><br><span class="line">authorize: ~/.ssh/id_rsa.pub</span><br><span class="line">keys:</span><br><span class="line">    - ~/.ssh/id_rsa</span><br><span class="line">folders:</span><br><span class="line">    -</span><br><span class="line">        map: /Users/glb_gz/Documents/php_workplace/Test</span><br><span class="line">        to: /home/vagrant/code</span><br><span class="line">sites:</span><br><span class="line">    -</span><br><span class="line">        map: homestead.test</span><br><span class="line">        to: /home/vagrant/code/public</span><br><span class="line"></span><br><span class="line">databases:</span><br><span class="line">    - homestead</span><br><span class="line"></span><br><span class="line">name: test</span><br><span class="line">hostname: test</span><br><span class="line">mongodb : true</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="3-SSH-进入-vagrant-后，执行下面的操作-就可以顺利安装好-MongoDB-了"><a href="#3-SSH-进入-vagrant-后，执行下面的操作-就可以顺利安装好-MongoDB-了" class="headerlink" title="3.SSH 进入 vagrant 后，执行下面的操作,就可以顺利安装好 MongoDB 了:"></a>3.SSH 进入 <code>vagrant</code> 后，执行下面的操作,就可以顺利安装好 <code>MongoDB</code> 了:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">$ ssh vagrant@192.168.10.10</span><br><span class="line">vagrant@test:/usr/local$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10</span><br><span class="line">Executing: /tmp/apt-key-gpghome.raLrEy2Bnr/gpg.1.sh --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10</span><br><span class="line">gpg: key 5F8F93707F0CEB10: public key &quot;Totally Legit Signing Key &lt;mallory@example.org&gt;&quot; imported</span><br><span class="line">gpg: key 9ECBEC467F0CEB10: 1 signature not checked due to a missing key</span><br><span class="line">gpg: key 9ECBEC467F0CEB10: public key &quot;Richard Kreuter &lt;richard@10gen.com&gt;&quot; imported</span><br><span class="line">gpg: Total number processed: 2</span><br><span class="line">gpg:               imported: 2</span><br><span class="line"></span><br><span class="line">vagrant@test:/usr/local$ echo &quot;deb http://repo.mongodb.org/apt/ubuntu &quot;$(lsb_release -sc)&quot;/mongodb-org/3.0 multiverse&quot; | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list</span><br><span class="line">deb http://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/3.0 multiverse</span><br><span class="line">vagrant@test:/usr/local$ sudo apt-get update</span><br><span class="line">Hit:1 https://deb.nodesource.com/node_8.x bionic InRelease</span><br><span class="line">vagrant@test:/usr/local$ sudo apt-get install -y mongodb-org</span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree       </span><br><span class="line">Reading state information... Done</span><br><span class="line">mongodb-org is already the newest version (3.6.9).</span><br><span class="line">0 upgraded, 0 newly installed, 0 to remove and 221 not upgraded.</span><br><span class="line">vagrant@test:/usr/local$ sudo pecl install mongodb</span><br><span class="line">WARNING: channel &quot;pecl.php.net&quot; has updated its protocols, use &quot;pecl channel-update pecl.php.net&quot; to update</span><br><span class="line">downloading mongodb-1.5.3.tgz ...</span><br><span class="line">...</span><br><span class="line">Build complete.</span><br><span class="line">Don&apos;t forget to run &apos;make test&apos;.</span><br><span class="line"></span><br><span class="line">running: make INSTALL_ROOT=&quot;/tmp/pear/temp/pear-build-rootLH757y/install-mongodb-1.5.3&quot; install</span><br><span class="line">Installing shared extensions:     /tmp/pear/temp/pear-build-rootLH757y/install-mongodb-1.5.3/usr/lib/php/20170718/</span><br><span class="line">running: find &quot;/tmp/pear/temp/pear-build-rootLH757y/install-mongodb-1.5.3&quot; | xargs ls -dils</span><br><span class="line">539331    4 drwxr-xr-x 3 root root    4096 Nov 16 07:00 /tmp/pear/temp/pear-build-rootLH757y/install-mongodb-1.5.3</span><br><span class="line">539739    4 drwxr-xr-x 3 root root    4096 Nov 16 07:00 /tmp/pear/temp/pear-build-rootLH757y/install-mongodb-1.5.3/usr</span><br><span class="line">539740    4 drwxr-xr-x 3 root root    4096 Nov 16 07:00 /tmp/pear/temp/pear-build-rootLH757y/install-mongodb-1.5.3/usr/lib</span><br><span class="line">539741    4 drwxr-xr-x 3 root root    4096 Nov 16 07:00 /tmp/pear/temp/pear-build-rootLH757y/install-mongodb-1.5.3/usr/lib/php</span><br><span class="line">539742    4 drwxr-xr-x 2 root root    4096 Nov 16 07:00 /tmp/pear/temp/pear-build-rootLH757y/install-mongodb-1.5.3/usr/lib/php/20170718</span><br><span class="line">539738 5796 -rwxr-xr-x 1 root root 5934296 Nov 16 07:00 /tmp/pear/temp/pear-build-rootLH757y/install-mongodb-1.5.3/usr/lib/php/20170718/mongodb.so</span><br><span class="line"></span><br><span class="line">Build process completed successfully</span><br><span class="line">Installing &apos;/usr/lib/php/20170718/mongodb.so&apos;</span><br><span class="line">install ok: channel://pecl.php.net/mongodb-1.5.3</span><br><span class="line">configuration option &quot;php_ini&quot; is not set to php.ini location</span><br><span class="line">You should add &quot;extension=mongodb.so&quot; to php.ini</span><br><span class="line">Segmentation fault</span><br><span class="line">#然后在 php.ini 中写入 extension = mongodb.so</span><br><span class="line">vagrant@test:/usr/local$ sudo find / -name &apos;php.ini&apos;</span><br><span class="line">/etc/php/7.1/fpm/php.ini</span><br><span class="line">/etc/php/7.1/cli/php.ini</span><br><span class="line">/etc/php/5.6/fpm/php.ini</span><br><span class="line">/etc/php/5.6/cli/php.ini</span><br><span class="line">/etc/php/7.3/fpm/php.ini</span><br><span class="line">/etc/php/7.3/cli/php.ini</span><br><span class="line">/etc/php/7.2/fpm/php.ini</span><br><span class="line">/etc/php/7.2/cli/php.ini</span><br><span class="line">/etc/php/7.0/fpm/php.ini</span><br><span class="line">/etc/php/7.0/cli/php.ini</span><br><span class="line">vagrant@test:/usr/local$ php -v</span><br><span class="line">PHP 7.2.12-1+ubuntu18.04.1+deb.sury.org+1 (cli) (built: Nov 12 2018 09:55:44) ( NTS )</span><br><span class="line">Copyright (c) 1997-2018 The PHP Group</span><br><span class="line">Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies</span><br><span class="line">    with Zend OPcache v7.2.12-1+ubuntu18.04.1+deb.sury.org+1, Copyright (c) 1999-2018, by Zend Technologies</span><br><span class="line">    with blackfire v1.22.0~linux-x64-non_zts72, https://blackfire.io, by Blackfire</span><br><span class="line">vagrant@test:/usr/local$ sudo vi /etc/php/7.2/fpm/php.ini</span><br><span class="line">vagrant@test:/usr/local$ sudo vi /etc/php/7.2/cli/php.ini</span><br><span class="line">vagrant@test:/usr/local$ sudo service php7.2-fpm restart &amp;&amp; sudo service nginx restart</span><br></pre></td></tr></table></figure>
+<h2 id="6-相关的问题-1"><a href="#6-相关的问题-1" class="headerlink" title="6.相关的问题"></a>6.相关的问题<a name="related_issues"></a></h2><ul>
+<li>1.在 Mac 上运行 <code>$ composer require mongodb/mongodb</code> ,出现以下问题:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Problem 1</span><br><span class="line">  - mongodb/mongodb 1.4.2 requires ext-mongodb ^1.5.0 -&gt; the requested PHP extension mongodb is missing from your system.</span><br><span class="line">  - mongodb/mongodb 1.4.1 requires ext-mongodb ^1.5.0 -&gt; the requested PHP extension mongodb is missing from your system.</span><br><span class="line">  - mongodb/mongodb 1.4.0 requires ext-mongodb ^1.5.0 -&gt; the requested PHP extension mongodb is missing from your system.</span><br><span class="line">  - Installation request for mongodb/mongodb ^1.4 -&gt; satisfiable by mongodb/mongodb[1.4.0, 1.4.1, 1.4.2].</span><br></pre></td></tr></table></figure>
+<ul>
+<li>1.1 解决方法 <a href="https://github.com/jenssegers/laravel-mongodb/issues/797" target="_blank" rel="noopener">Composer can’t find mongodb extension</a>,运行 <code>$ composer require jenssegers/mongodb --ignore-platform-reqs</code></li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='blog-comments'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
+        data-d=''
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1573019751/TriDiamond_logo_ui_xeublz.jpg" height=300 width=300></img>
+                    <p>Tim</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        <dd><a href="https://github.com/TriDiamond" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/TriDiamond6" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="https://stackoverflow.com/users/7602324/tridiamond?tab=profile" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">89 <p>Articles</p></a></li>
+                    <li><a href="/categories">26 <p>Categories</p></a></li>
+                    <li><a href="/tags">23 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-参考"><span class="toc-number">1.</span> <span class="toc-text">1.参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-ssh-连接"><span class="toc-number">2.</span> <span class="toc-text">2.ssh 连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-上传文件到服务器"><span class="toc-number">3.</span> <span class="toc-text">3.上传文件到服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-mysql-的操作"><span class="toc-number">4.</span> <span class="toc-text">4.mysql 的操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-MongoDB-的安装"><span class="toc-number">5.</span> <span class="toc-text">5.MongoDB 的安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-相关的问题"><span class="toc-number">6.</span> <span class="toc-text">6.相关的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-参考-1"><span class="toc-number">7.</span> <span class="toc-text">1.参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-ssh-连接-1"><span class="toc-number">8.</span> <span class="toc-text">2.ssh 连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-上传文件到服务器-1"><span class="toc-number">9.</span> <span class="toc-text">3.上传文件到服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-mysql-的操作-1"><span class="toc-number">10.</span> <span class="toc-text">4.mysql 的操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-MongoDB-的安装-1"><span class="toc-number">11.</span> <span class="toc-text">5.MongoDB 的安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-相关的问题-1"><span class="toc-number">12.</span> <span class="toc-text">6.相关的问题</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2020
+        <span class="gradient-text">
+            Tim
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+    <script src="/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149874671-1');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>

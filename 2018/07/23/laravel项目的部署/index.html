@@ -1,0 +1,591 @@
+
+<!DOCTYPE html>
+<html lang="中文" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>laravel项目的部署 - desirepaths 的博客</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="个人目标：随性而为!.,laravel项目的部署
+1.记录把服务器部署在 远程服务器的过程.
+
+
+1.参考2.安装过程
+1.mysql 的安装(安装最新版)
+
+3.遇到的问题
+1.Specified key was too,"> 
+    <meta name="author" content="Tim"> 
+    <link rel="alternative" href="atom.xml" title="desirepaths 的博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
+    <link rel="stylesheet" href="/css/ball-atom.min.css">
+</head>
+</html>
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">desirepaths 的博客</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://yoursite.com">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">laravel项目的部署</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg) ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/php"><b>「
+                    </b>PHP<b> 」</b></a>
+                
+                July 23, 2018
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2018/07/23/laravel项目的部署/" title="laravel项目的部署">laravel项目的部署</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    13k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    11 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/php/">php</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h1 id="laravel项目的部署"><a href="#laravel项目的部署" class="headerlink" title="laravel项目的部署"></a>laravel项目的部署</h1><ul>
+<li>1.记录把服务器部署在 远程服务器的过程.</li>
+</ul>
+<a id="more"></a>
+<h2 id="1-参考"><a href="#1-参考" class="headerlink" title="1.参考"></a><a href="#references">1.参考</a></h2><h2 id="2-安装过程"><a href="#2-安装过程" class="headerlink" title="2.安装过程"></a><a href="#install_step">2.安装过程</a></h2><ul>
+<li>1.mysql 的安装(安装最新版)</li>
+</ul>
+<h2 id="3-遇到的问题"><a href="#3-遇到的问题" class="headerlink" title="3.遇到的问题"></a><a href="#issues">3.遇到的问题</a></h2><ul>
+<li>1.<code>Specified key was too long error</code>错误</li>
+<li>2.<code>public/index.php</code>主页显示没问题, 但 <code>login</code>,<code>register</code> 等等就显示 <code>404</code> 错误</li>
+</ul>
+<h2 id="4-项目的部署"><a href="#4-项目的部署" class="headerlink" title="4.项目的部署"></a><a href="#project_install">4.项目的部署</a></h2><hr>
+<hr>
+<hr>
+<h2 id="1-参考-1"><a href="#1-参考-1" class="headerlink" title="1.参考:"></a>1.参考:<a name="references"></a></h2><ul>
+<li>0.服务器(配置支持中文)需要安装的软件(nginx+php+mysql+composer+git+PhpMyAdmin)</li>
+<li>1.<a href="https://www.jianshu.com/p/6038191ef4fe" target="_blank" rel="noopener">LAMP环境下的Laravel项目部署</a></li>
+<li><a href="https://www.zhihu.com/question/35537084" target="_blank" rel="noopener">2.请问laravel5项目部署到生产环境的最佳实践？</a></li>
+<li><a href="https://www.rosehosting.com/blog/how-to-install-laravel-on-debian-9/" target="_blank" rel="noopener">3.How to Install Laravel on Debian 9</a></li>
+<li><a href="https://hackernoon.com/a-step-by-step-guide-to-setup-php-laravel-environment-linux-50b55a4fd15e" target="_blank" rel="noopener">4.A step by step guide to setup PHP (Laravel) environment (Linux).</a></li>
+<li><a href="https://laravel-china.org/articles/5012/gitlab-webhooks-implements-automated-server-project-deployment" target="_blank" rel="noopener">5.【GitLab】：Webhooks 实现自动化服务器项目部署</a></li>
+<li><a href="https://medium.com/@grmcameron/deploying-your-laravel-web-app-1faaa66f3302" target="_blank" rel="noopener">6.Deploying a Laravel 5.6 Web App on Ubuntu</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-debian-8" target="_blank" rel="noopener">7.How To Install and Use Composer on Debian 8</a></li>
+</ul>
+<hr>
+<h2 id="2-安装过程-1"><a href="#2-安装过程-1" class="headerlink" title="2.安装过程"></a>2.安装过程<a name="install_step"></a></h2><h4 id="1-mysql-的安装-安装最新版"><a href="#1-mysql-的安装-安装最新版" class="headerlink" title="1.mysql 的安装(安装最新版)."></a>1.mysql 的安装(安装最新版).</h4><ul>
+<li><a href="https://www.linode.com/docs/databases/mariadb/mariadb-setup-debian/" target="_blank" rel="noopener">1.How to Set Up MariaDB on Debian 9</a></li>
+<li><a href="https://www.tecmint.com/install-mariadb-in-ubuntu-and-debian/" target="_blank" rel="noopener">2.How to Install MariaDB 10 on Debian and Ubuntu</a></li>
+<li><a href="https://www.londonappdeveloper.com/how-to-completely-uninstall-mariadb-from-a-debian-7-server/" target="_blank" rel="noopener">3.uninstall MariaDB</a></li>
+<li><a href="https://www.jianshu.com/p/8fc90e518e2c" target="_blank" rel="noopener">4.开启远程访问的权限</a><ul>
+<li>1.在服务器端进入 mysql ,然后运行命令 <code>grant all privileges on *.* to &#39;root&#39;@&#39;%&#39; identified by &#39;remove1112300&#39;;</code> , <code>flush privileges;</code></li>
+<li>2.注释文件 <code>vi /etc/mysql/my.cnf</code>  中的 <code>bind-address = 127.0.0.1</code><ul>
+<li>1.如果是 MariaDB, <code>bind-address</code> 在 <code>/etc/mysql/mariadb.conf.d/50-server.cnf</code>处</li>
+<li>2.参考: <a href="https://dba.stackexchange.com/questions/164929/where-is-my-bind-address/164932" target="_blank" rel="noopener">Where is my bind address?</a></li>
+<li>3.记得提前查看 mysql 端口的状态是否在监听 3306,<code>netstat -tulpen</code>.</li>
+</ul>
+</li>
+<li>3.重启服务. <code>service mysql restart</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="2-PHP-的安装"><a href="#2-PHP-的安装" class="headerlink" title="2.PHP 的安装."></a>2.PHP 的安装.</h4><ul>
+<li>0.参考: <ul>
+<li>1.<a href="https://medium.com/@asked_io/how-to-install-php-7-2-x-nginx-1-10-x-laravel-5-6-f9e30ee30eff" target="_blank" rel="noopener">How-to Install PHP 7.2.x, NGINX 1.10.x &amp; Laravel 5.6</a></li>
+<li>2.<a href="https://www.chris-shaw.com/blog/installing-php-7.2-on-debian-8-jessie-and-debian-9-stretch" target="_blank" rel="noopener">Installing Php 7.2 On Debian 8 Jessie And Debian 9 Stretch</a></li>
+</ul>
+</li>
+<li>1.需要安装的 php 的插件有:<ul>
+<li>1.<code>php7.0-zip</code></li>
+<li>2.<code>php7.2-gd</code></li>
+<li>3.<code>php7.2-fpm</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="3-遇到的问题-1"><a href="#3-遇到的问题-1" class="headerlink" title="3.遇到的问题"></a>3.遇到的问题<a name="issues"></a></h2><h4 id="1-服务器做-php-artisan-migrate-时，出现-Specified-key-was-too-long-error-错误"><a href="#1-服务器做-php-artisan-migrate-时，出现-Specified-key-was-too-long-error-错误" class="headerlink" title="1.服务器做 php artisan migrate 时，出现 Specified key was too long error 错误"></a>1.服务器做 <code>php artisan migrate</code> 时，出现 <code>Specified key was too long error</code> 错误</h4><ul>
+<li><a href="https://laravel-news.com/laravel-5-4-key-too-long-error" target="_blank" rel="noopener">解决方法1:Laravel 5.4: Specified key was too long error</a></li>
+<li><a href="https://segmentfault.com/a/1190000008416200" target="_blank" rel="noopener">同样的方法2:</a></li>
+<li>3.安装新版的 mariaDB(经测试，10.3.8-MariaDB 可以)</li>
+</ul>
+<h4 id="2-public-index-php主页显示没问题-但-login-register-等等就显示-404-错误"><a href="#2-public-index-php主页显示没问题-但-login-register-等等就显示-404-错误" class="headerlink" title="2.public/index.php主页显示没问题, 但 login,register 等等就显示 404 错误"></a>2.<code>public/index.php</code>主页显示没问题, 但 <code>login</code>,<code>register</code> 等等就显示 <code>404</code> 错误</h4><ul>
+<li><a href="https://laravel-china.org/docs/laravel/5.6/installation/1352" target="_blank" rel="noopener">1.配置链接</a><ul>
+<li>1.需要把 <code>/etc/nginx/sites-available/default</code> 中的 <code>root</code>路径设置到 <code>public</code> 中.    </li>
+</ul>
+</li>
+</ul>
+<h4 id="3-执行-composer-install-时，遇到-composer-the-zip-extension-and-unzip-command-are-both-missing-skipping-的问题"><a href="#3-执行-composer-install-时，遇到-composer-the-zip-extension-and-unzip-command-are-both-missing-skipping-的问题" class="headerlink" title="3.执行 composer install 时，遇到 composer the zip extension and unzip command are both missing skipping 的问题"></a>3.执行 <code>composer install</code> 时，遇到 <code>composer the zip extension and unzip command are both missing skipping</code> 的问题</h4><ul>
+<li><a href="https://stackoverflow.com/questions/41274829/php-error-the-zip-extension-and-unzip-command-are-both-missing-skipping" target="_blank" rel="noopener">1.解决方法<code>(sudo) apt install zip unzip php7.0-zip</code></a></li>
+</ul>
+<h4 id="4-只能显示首页，其它页面显示-404-ERROR。"><a href="#4-只能显示首页，其它页面显示-404-ERROR。" class="headerlink" title="4.只能显示首页，其它页面显示 404 ERROR。"></a>4.只能显示首页，其它页面显示 <code>404 ERROR</code>。</h4><ul>
+<li><a href="https://laravel-china.org/docs/laravel/5.6/deployment/1357" target="_blank" rel="noopener">1.需要配置 nginx 的 <code>/etc/nginx/sites-available/default</code> 文件(先 cp 备份好)</a><ul>
+<li>1.配置完成后，重启 <code>nginx</code>.<ul>
+<li>1.检查是否有错误,<code>nginx -t</code>.</li>
+<li>2.重启 <code>nginx</code>,<code>service nginx restart</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-在后台增加图片时，显示Impossible-to-create-the-root-directory-quot-home-tian-www-html-frontend-storage-app-public-users-August2018-quot"><a href="#5-在后台增加图片时，显示Impossible-to-create-the-root-directory-quot-home-tian-www-html-frontend-storage-app-public-users-August2018-quot" class="headerlink" title="5.在后台增加图片时，显示Impossible to create the root directory &quot;/home/tian/www/html/frontend/storage/app/public/users/August2018&quot;."></a>5.在后台增加图片时，显示<code>Impossible to create the root directory &quot;/home/tian/www/html/frontend/storage/app/public/users/August2018&quot;.</code></h4><ul>
+<li>1.在 项目的上级目录下，如 <code>/home/tian/www/html</code> , 运行一下命令: <code>chown -R www-data:root .</code></li>
+</ul>
+<h4 id="6-在运行-composer-install-时，出现-mmap-failed-12-Cannot-allocate-memory-错误"><a href="#6-在运行-composer-install-时，出现-mmap-failed-12-Cannot-allocate-memory-错误" class="headerlink" title="6.在运行 composer install 时，出现 mmap() failed: [12] Cannot allocate memory 错误"></a>6.在运行 <code>composer install</code> 时，出现 <code>mmap() failed: [12] Cannot allocate memory</code> 错误</h4><ul>
+<li>1.<a href="https://stackoverflow.com/questions/18116261/php-composer-update-cannot-allocate-memory-error-using-laravel-4" target="_blank" rel="noopener">PHP Composer update “cannot allocate memory” error </a><ul>
+<li>解决的方法，运行 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024</span><br><span class="line">/sbin/mkswap /var/swap.1</span><br><span class="line">/sbin/swapon /var/swap.1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="4-项目的部署-1"><a href="#4-项目的部署-1" class="headerlink" title="4.项目的部署"></a>4.项目的部署<a name="project_install"></a></h2><ul>
+<li>1.把代码放到 <code>GitLab</code> 中(因为 <code>GitLab</code> 可以创建私人的仓库,而且日本服务器 <code>clone</code> 的速度比国内的 <code>Gitee</code> 快 n 倍)</li>
+<li>2.把 <code>nginx</code> 的 <code>root</code> 路径改为当前 laravel 项目的 public 目录.<ul>
+<li>1.<code>vi /etc/nginx/sites-available/default</code></li>
+<li>2.修改 <code>root /var/www/html/FastCloud_Server/public/</code></li>
+<li>3.重启 <code>nginx</code>(记得 nginx 要有 phpXX-fpm 的支持才行)<ul>
+<li>1.<code>nginx -t</code></li>
+<li>2.<code>service nginx restart</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>3.到项目路径下，执行 <code>composer install</code>,安装依赖.</p>
+<ul>
+<li>1.国内的服务器，最好是更改 <code>composer</code> 的源:<ul>
+<li>1.<a href="https://pkg.phpcomposer.com/" target="_blank" rel="noopener">Packagist 镜像使用方法</a><ul>
+<li>1.运行 <code>composer config -g repo.packagist composer https://packagist.phpcomposer.com</code></li>
+</ul>
+</li>
+<li>2.<a href="https://laravel-china.org/composer" target="_blank" rel="noopener">Composer 中文镜像 / Packagist 中国全量镜像正式发布！</a><ul>
+<li>1.运行: <code>composer config -g repo.packagist composer https://packagist.laravel-china.org</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2.如果是在本地 Mac 下运行出现 <code>In PDOConnection.php line 50:SQLSTATE[HY000] [2002] Connection refused</code> ,就记得打开 Mac 上的 <code>Mysql</code>,否则后续的操作可能会出现问题.</li>
+</ul>
+</li>
+<li><p>4.部署配置</p>
+<ul>
+<li>1.生成 <code>.env</code> 文件    ,命令: <code>cp .env.example.product .env</code></li>
+<li>2.生成 <code>APP_KEY</code> ,命令: <code>php artisan key:generate</code></li>
+<li><p>3.设置文件夹的权限:</p>
+<p>  <code>chmod -R 777 storage</code><br>  <code>chmod -R 777 bootstrap/cache</code></p>
+</li>
+<li>4.运行数据库的迁移:<ul>
+<li>1.<code>php artisan migrate</code></li>
+</ul>
+</li>
+<li>5.安装 voyager<ul>
+<li>1.安装<code>php artisan voyager:install --with-dummy</code></li>
+</ul>
+</li>
+<li><p>6.设置 <code>storage</code> 连接.</p>
+<ul>
+<li>0.到服务器项目目录运行: <code>php artisan storage:link</code></li>
+<li>1.或手动链接: <code>ln -s /var/www/html/FastCloud_Server/storage/app/public /var/www/html/FastCloud_Server/public/storage</code> </li>
+</ul>
+</li>
+<li><p>7.<a href="http://jwt-auth.readthedocs.io/en/develop/laravel-installation/" target="_blank" rel="noopener">生成 JWT 认证的 KEY</a> ,<code>php artisan jwt:secret</code></p>
+<ul>
+<li>1.如果不生成，在取得 <code>API</code> 数据的时候，会有 500 错误弹出.</li>
+</ul>
+</li>
+<li><p>8.暂时如果服务器有更新的步骤:</p>
+<ul>
+<li>1.先在本地 push 到 GitLab</li>
+<li>2.ssh 登录到服务器，执行 <code>php artisan down (--message=&quot;Upgrading Database&quot; --retry=60)</code>，命令，让服务器<a href="https://laravel-china.org/docs/laravel/5.6/configuration/1353" target="_blank" rel="noopener">进入 维护 模式</a>.</li>
+<li>3.<code>git pull origin master</code> ,把源码下载下来.</li>
+<li>4.修改好一些依赖后，就执行 <code>php artisan up</code> 上线.</li>
+</ul>
+</li>
+<li><p>9.数据的迁移及保存</p>
+<ul>
+<li>1.Mysql 数据库的内容就用 Sequel Pro 把数据导出或导入.<ul>
+<li>1.一般需要导出的数据库为:<code>abouts,events,permission_role,permissions,pictures,products,users</code></li>
+</ul>
+</li>
+<li>2.其它的 <code>public</code> 中的数据就通过 <a href="https://unix.stackexchange.com/questions/188285/how-to-copy-a-file-from-a-remote-server-to-a-local-machine" target="_blank" rel="noopener"><code>scp</code></a> 命令去导出和导入.<ul>
+<li>1.下载,如在本地电脑运行以下的命令: <code>scp -r tian@10.100.0.1:/home/tian/www/html/frontend/storage/app/public /Users/tianzeng/Desktop</code></li>
+<li>2.Logs 的下载,<code>scp -r tian@10.100.1.217:/home/tian/www/html/frontend/storage/logs/laravel.log /Users/tianzeng/Desktop</code></li>
+<li>3.数据的上传,在本地电脑运行一下命令: <code>scp -r /Users/tianzeng/Desktop/public tian@10.100.1.217:/home/tian/www/html/GLB/storage/app</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<hr>
+<hr>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='blog-comments'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
+        data-d=''
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1573019751/TriDiamond_logo_ui_xeublz.jpg" height=300 width=300></img>
+                    <p>Tim</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        <dd><a href="https://github.com/TriDiamond" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/TriDiamond6" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="https://stackoverflow.com/users/7602324/tridiamond?tab=profile" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">89 <p>Articles</p></a></li>
+                    <li><a href="/categories">26 <p>Categories</p></a></li>
+                    <li><a href="/tags">23 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#laravel项目的部署"><span class="toc-number">1.</span> <span class="toc-text">laravel项目的部署</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-参考"><span class="toc-number">1.1.</span> <span class="toc-text">1.参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-安装过程"><span class="toc-number">1.2.</span> <span class="toc-text">2.安装过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-遇到的问题"><span class="toc-number">1.3.</span> <span class="toc-text">3.遇到的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-项目的部署"><span class="toc-number">1.4.</span> <span class="toc-text">4.项目的部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-参考-1"><span class="toc-number">1.5.</span> <span class="toc-text">1.参考:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-安装过程-1"><span class="toc-number">1.6.</span> <span class="toc-text">2.安装过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-遇到的问题-1"><span class="toc-number">1.7.</span> <span class="toc-text">3.遇到的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-项目的部署-1"><span class="toc-number">1.8.</span> <span class="toc-text">4.项目的部署</span></a></li></ol></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2020
+        <span class="gradient-text">
+            Tim
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+    <script src="/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149874671-1');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>

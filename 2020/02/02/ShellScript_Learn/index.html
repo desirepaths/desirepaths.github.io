@@ -1,0 +1,487 @@
+
+<!DOCTYPE html>
+<html lang="中文" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>学习 Shell Script - desirepaths 的博客</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="个人目标：随性而为!.,
+学习 Shell script .
+
+
+1.参考2.导入其它的 Script 文件.3.Demo
+
+
+1.参考
+1.Linux Tutorial
+2.Bash Scripting Tutorial,"> 
+    <meta name="author" content="Tim"> 
+    <link rel="alternative" href="atom.xml" title="desirepaths 的博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
+    <link rel="stylesheet" href="/css/ball-atom.min.css">
+</head>
+</html>
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">desirepaths 的博客</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://yoursite.com">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">学习 Shell Script</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg) ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/Linux"><b>「
+                    </b>LINUX<b> 」</b></a>
+                
+                February 02, 2020
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2020/02/02/ShellScript_Learn/" title="学习 Shell Script">学习 Shell Script</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    17k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    16 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Linux/">Linux</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <blockquote>
+<p>学习 Shell script .</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="1-参考"><a href="#1-参考" class="headerlink" title="1.参考"></a>1.参考</h2><h2 id="2-导入其它的-Script-文件"><a href="#2-导入其它的-Script-文件" class="headerlink" title="2.导入其它的 Script 文件."></a>2.导入其它的 Script 文件.</h2><h2 id="3-Demo"><a href="#3-Demo" class="headerlink" title="3.Demo"></a>3.Demo</h2><hr>
+<hr>
+<hr>
+<h2 id="1-参考-1"><a href="#1-参考-1" class="headerlink" title="1.参考"></a>1.参考</h2><ul>
+<li><a href="https://ryanstutorials.net/linuxtutorial/" target="_blank" rel="noopener">1.Linux Tutorial</a></li>
+<li><a href="https://ryanstutorials.net/bash-scripting-tutorial/" target="_blank" rel="noopener">2.Bash Scripting Tutorial</a></li>
+<li><a href="https://github.com/monfresh/laptop" target="_blank" rel="noopener">3.A shell script which turns your Mac into an awesome web development machine</a></li>
+</ul>
+<h2 id="2-导入其它的-Script-文件-1"><a href="#2-导入其它的-Script-文件-1" class="headerlink" title="2.导入其它的 Script 文件."></a>2.导入其它的 Script 文件.</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line"></span><br><span class="line">#[How best to include other scripts?](https://stackoverflow.com/questions/192292/how-best-to-include-other-scripts)</span><br><span class="line">my_dir=&quot;$(dirname &quot;$0&quot;)&quot;</span><br><span class="line"></span><br><span class="line">&quot;$my_dir/other_script.sh&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="3-Demo-1"><a href="#3-Demo-1" class="headerlink" title="3.Demo"></a>3.Demo</h2><ul>
+<li>1.打印 Bash 的版本号</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ echo $BASH_VERSION</span><br><span class="line">3.2.57(1)-release</span><br></pre></td></tr></table></figure>
+<ul>
+<li>2.只读属性 </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">readonly var</span><br></pre></td></tr></table></figure>
+<ul>
+<li>1.Demo 1检查 file 是否存在</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">usage() &#123;</span><br><span class="line">    echo &quot;You need to provide an argumennt:&quot;</span><br><span class="line">    echo &quot;usage: $0 file_name&quot;</span><br><span class="line">&#125;</span><br><span class="line">is_file_exist() &#123;</span><br><span class="line">    local file=&quot;$1&quot;</span><br><span class="line">    [[ -f &quot;$file&quot; ]] &amp;&amp; return 0 || return 1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">## 如果是 0， 即没有参数输入的情况，就执行后面的 usage.</span><br><span class="line">[[ $# -eq 0 ]] &amp;&amp; usage</span><br><span class="line"></span><br><span class="line">## 如果返回 0 ， 就代表找到了 file.</span><br><span class="line">if ( is_file_exist &quot;$1&quot; )</span><br><span class="line">then</span><br><span class="line">    echo &quot;File found&quot;</span><br><span class="line">else</span><br><span class="line">    echo &quot;File not found&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<ul>
+<li>2.方法的返回值</li>
+</ul>
+<blockquote>
+<p>方法的返回值会保存在 <code>$?</code> 中，而且 <code>$?</code> 一旦获取过一次后，就会自动变为 0.</p>
+</blockquote>
+<ul>
+<li><p>0.参考: <a href="https://bash.cyberciti.biz/guide/Returning_from_a_function" target="_blank" rel="noopener">Returning from a function</a></p>
+</li>
+<li><p>1.用 <code>$?</code></p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function test_return() &#123;</span><br><span class="line">    sum=$(($1 + $2))</span><br><span class="line">    return $sum</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">echo &quot;(before)test_return:$?&quot;</span><br><span class="line">test_return 1 2</span><br><span class="line">echo &quot;test_return:$?&quot;</span><br><span class="line"></span><br><span class="line">test_return 3 4</span><br><span class="line">echo &quot;test_return:$?&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>2.返回 string</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">domain=&quot;CyberCiti.BIz&quot;</span><br><span class="line">out=&quot;&quot;</span><br><span class="line"></span><br><span class="line">##################################################################</span><br><span class="line"># Purpose: Converts a string to lower case</span><br><span class="line"># Arguments:</span><br><span class="line">#   $@ -&gt; String to convert to lower case</span><br><span class="line">##################################################################</span><br><span class="line">function to_lower()</span><br><span class="line">&#123;</span><br><span class="line">    local str=&quot;$@&quot;</span><br><span class="line">    local output</span><br><span class="line">    output=$(tr &apos;[A-Z]&apos; &apos;[a-z]&apos;&lt;&lt;&lt;&quot;$&#123;str&#125;&quot;)</span><br><span class="line">    echo $output</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># invoke the to_lower()</span><br><span class="line">to_lower &quot;This Is a TEST&quot;</span><br><span class="line"></span><br><span class="line"># invoke to_lower() and store its result to $out variable</span><br><span class="line">out=$(to_lower $&#123;domain&#125;)</span><br><span class="line"></span><br><span class="line"># Display  back the result from $out</span><br><span class="line">echo &quot;Domain name : $out&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="1-PID-相关"><a href="#1-PID-相关" class="headerlink" title="1.PID 相关."></a>1.PID 相关.</h3><h5 id="1-打印-pid"><a href="#1-打印-pid" class="headerlink" title="1.打印 pid"></a>1.打印 pid</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#echo &quot;pid is $$&quot;</span><br></pre></td></tr></table></figure>
+<h6 id="2-kill-pid-所在的程序"><a href="#2-kill-pid-所在的程序" class="headerlink" title="2.kill pid 所在的程序."></a>2.kill pid 所在的程序.</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ kill -9 pid</span><br></pre></td></tr></table></figure>
+<h3 id="2-Debug-的方法"><a href="#2-Debug-的方法" class="headerlink" title="2.Debug 的方法"></a>2.Debug 的方法</h3><h5 id="1-在运行的时候添加-bash-x-命令-如"><a href="#1-在运行的时候添加-bash-x-命令-如" class="headerlink" title="* 1.在运行的时候添加 bash -x 命令, 如"></a>* 1.在运行的时候添加 bash -x 命令, 如</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bash -x ./file_name</span><br></pre></td></tr></table></figure>
+<h5 id="2-在文件的头部添加-x-如"><a href="#2-在文件的头部添加-x-如" class="headerlink" title="* 2.在文件的头部添加 -x, 如"></a>* 2.在文件的头部添加 -x, 如</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash -x</span><br></pre></td></tr></table></figure>
+<h5 id="3-或者在文件的中部位置添加-set-x-set-x-如"><a href="#3-或者在文件的中部位置添加-set-x-set-x-如" class="headerlink" title="* 3.或者在文件的中部位置添加 set -x , set +x 如:"></a>* 3.或者在文件的中部位置添加 set -x , set +x 如:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;1&quot;</span><br><span class="line">set -x</span><br><span class="line">echo &quot;2&quot;</span><br><span class="line">echo &quot;3&quot;</span><br><span class="line">echo &quot;4&quot;</span><br><span class="line">set +x</span><br><span class="line">echo &quot;5&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="3-与或操作命令符"><a href="#3-与或操作命令符" class="headerlink" title="3.与或操作命令符"></a>3.与或操作命令符</h3><ul>
+<li><a href="https://stackoverflow.com/questions/4510640/what-is-the-purpose-of-in-a-shell-command" target="_blank" rel="noopener">What is the purpose of “&amp;&amp;” in a shell command?</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># command_1 &amp;&amp; command_2: execute command_2 only when command_1 is executed successfully.</span><br><span class="line"># command_1 || command_2: execute command_2 only when command_1 is not successful executed.</span><br><span class="line"></span><br><span class="line">$ false || echo &quot;Oops, fail&quot;</span><br><span class="line">Oops, fail</span><br><span class="line"></span><br><span class="line">$ true || echo &quot;Will not be printed&quot;</span><br><span class="line">$  </span><br><span class="line"></span><br><span class="line">$ true &amp;&amp; echo &quot;Things went well&quot;</span><br><span class="line">Things went well</span><br><span class="line"></span><br><span class="line">$ false &amp;&amp; echo &quot;Will not be printed&quot;</span><br><span class="line">$</span><br><span class="line"></span><br><span class="line">$ false ; echo &quot;This will always run&quot;</span><br><span class="line">This will always run</span><br></pre></td></tr></table></figure>
+<h3 id="4-判断用户是否是-root"><a href="#4-判断用户是否是-root" class="headerlink" title="4.判断用户是否是 root"></a>4.判断用户是否是 root</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Purpose: Determine if current user is root or not</span><br><span class="line">is_root_user()&#123;</span><br><span class="line"> # root user has user id (UID) zero.</span><br><span class="line"> [ $(id -u) -eq 0 ] &amp;&amp; return $TRUE || return $FALSE</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">is_root_user &amp;&amp; echo &quot;You can run this script.&quot; || echo &quot;You need to run this script as a root user.&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="5-判断-True-of-False"><a href="#5-判断-True-of-False" class="headerlink" title="5.判断 True of False"></a>5.判断 True of False</h3><ul>
+<li>1.参考:<a href="https://superuser.com/questions/1400335/how-does-bash-test-false" target="_blank" rel="noopener">How does bash test ‘false’?</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">declare -r TRUE=true</span><br><span class="line">declare -r FALSE=false</span><br><span class="line"></span><br><span class="line">if [ $TRUE = true ]</span><br><span class="line">then</span><br><span class="line">    echo &quot;TRUE&quot;</span><br><span class="line">else</span><br><span class="line">    echo &quot;FALSE&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<ul>
+<li>1.<code>-eq</code> 是判断 数字类型的, <code>=</code> 判断 string 类型</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">declare -r five=05</span><br><span class="line">declare -r siz=06</span><br><span class="line">if [[ $five -eq 5 ]]; then echo &quot;equal&quot;; else echo &quot;nope&quot;; fi</span><br><span class="line"># print: equal</span><br><span class="line">if [[ $five -eq 6 ]]; then echo &quot;equal&quot;; else echo &quot;nope&quot;; fi</span><br><span class="line"># print: nope</span><br><span class="line">if [[ $five = 5 ]]; then echo &quot;equal&quot;; else echo &quot;nope&quot;; fi</span><br><span class="line"># print: nope</span><br><span class="line">if [[ $five = 6 ]]; then echo &quot;equal&quot;; else echo &quot;nope&quot;; fi</span><br><span class="line"># print: nope</span><br></pre></td></tr></table></figure>
+<ul>
+<li>2.<code>while</code> 判断</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">flag=1</span><br><span class="line">while ((flag))</span><br><span class="line">do</span><br><span class="line">   read x</span><br><span class="line">   [ &quot;$x&quot; == &quot;true&quot; ] &amp;&amp; flag=0</span><br><span class="line">   echo &quot;$&#123;x&#125; : $&#123;flag&#125;&quot;</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<ul>
+<li>3.数字</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">declare -r TRUE=0</span><br><span class="line">declare -r FALSE=1</span><br><span class="line"></span><br><span class="line">condition=$TRUE</span><br><span class="line"></span><br><span class="line">if [[ $condition -eq $TRUE ]]</span><br><span class="line">then</span><br><span class="line">    echo &quot;true&quot;</span><br><span class="line">else</span><br><span class="line">    echo &quot;false&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='blog-comments'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
+        data-d=''
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1573019751/TriDiamond_logo_ui_xeublz.jpg" height=300 width=300></img>
+                    <p>Tim</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        <dd><a href="https://github.com/TriDiamond" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/TriDiamond6" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="https://stackoverflow.com/users/7602324/tridiamond?tab=profile" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">89 <p>Articles</p></a></li>
+                    <li><a href="/categories">26 <p>Categories</p></a></li>
+                    <li><a href="/tags">23 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-参考"><span class="toc-number">1.</span> <span class="toc-text">1.参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-导入其它的-Script-文件"><span class="toc-number">2.</span> <span class="toc-text">2.导入其它的 Script 文件.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Demo"><span class="toc-number">3.</span> <span class="toc-text">3.Demo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-参考-1"><span class="toc-number">4.</span> <span class="toc-text">1.参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-导入其它的-Script-文件-1"><span class="toc-number">5.</span> <span class="toc-text">2.导入其它的 Script 文件.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Demo-1"><span class="toc-number">6.</span> <span class="toc-text">3.Demo</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-PID-相关"><span class="toc-number">6.1.</span> <span class="toc-text">1.PID 相关.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Debug-的方法"><span class="toc-number">6.2.</span> <span class="toc-text">2.Debug 的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-与或操作命令符"><span class="toc-number">6.3.</span> <span class="toc-text">3.与或操作命令符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-判断用户是否是-root"><span class="toc-number">6.4.</span> <span class="toc-text">4.判断用户是否是 root</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-判断-True-of-False"><span class="toc-number">6.5.</span> <span class="toc-text">5.判断 True of False</span></a></li></ol></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2020
+        <span class="gradient-text">
+            Tim
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+    <script src="/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149874671-1');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>

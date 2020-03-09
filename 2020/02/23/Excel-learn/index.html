@@ -1,0 +1,487 @@
+
+<!DOCTYPE html>
+<html lang="中文" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Excel 导入 Json 文件数据 - desirepaths 的博客</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="个人目标：随性而为!.,
+用 Excel 导入 Json 文件的数据， 并把 Key 和 value 的数据分成不同的列去显示.
+
+
+1.从 JSON 文件中导入数据到 Excel(Mac excel 2016)2.从 E,"> 
+    <meta name="author" content="Tim"> 
+    <link rel="alternative" href="atom.xml" title="desirepaths 的博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
+    <link rel="stylesheet" href="/css/ball-atom.min.css">
+</head>
+</html>
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">desirepaths 的博客</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://yoursite.com">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">Excel 导入 Json 文件数据</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg) ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/Office"><b>「
+                    </b>OFFICE<b> 」</b></a>
+                
+                February 23, 2020
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2020/02/23/Excel-learn/" title="Excel 导入 Json 文件数据">Excel 导入 Json 文件数据</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    5.4k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    5 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Office/">Office</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <blockquote>
+<p>用 Excel 导入 Json 文件的数据， 并把 Key 和 value 的数据分成不同的列去显示.</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="1-从-JSON-文件中导入数据到-Excel-Mac-excel-2016"><a href="#1-从-JSON-文件中导入数据到-Excel-Mac-excel-2016" class="headerlink" title="1.从 JSON 文件中导入数据到 Excel(Mac excel 2016)"></a>1.从 JSON 文件中导入数据到 Excel(Mac excel 2016)</h2><h2 id="2-从-Excel-中导出数据到-JSON-文件"><a href="#2-从-Excel-中导出数据到-JSON-文件" class="headerlink" title="2.从 Excel 中导出数据到 JSON 文件."></a>2.从 Excel 中导出数据到 JSON 文件.</h2><hr>
+<hr>
+<hr>
+<h2 id="1-从-JSON-文件中导入数据到-Excel-Mac-excel-2016-1"><a href="#1-从-JSON-文件中导入数据到-Excel-Mac-excel-2016-1" class="headerlink" title="1.从 JSON 文件中导入数据到 Excel(Mac excel 2016)"></a>1.从 JSON 文件中导入数据到 Excel(Mac excel 2016)</h2><h4 id="1-目标"><a href="#1-目标" class="headerlink" title="1.目标:"></a>1.目标:</h4><ul>
+<li>1.源 json 文件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;product.rlm1&quot;: &quot;RLM 1&quot;,</span><br><span class="line">  &quot;product.zeroturn&quot;: &quot;Zeroturn&quot;,</span><br><span class="line">  &quot;product.battery&quot;: &quot;Batteries&quot;,</span><br><span class="line">  &quot;product.rlm2&quot;: &quot;RLM 2&quot;,</span><br><span class="line"></span><br><span class="line">  &quot;search&quot;: &quot;Search&quot;,</span><br><span class="line">  &quot;set&quot;: &quot;Set&quot;,</span><br><span class="line">  &quot;update-now&quot;: &quot;Update now&quot;,</span><br><span class="line">  &quot;enable&quot;: &quot;Enable&quot;,</span><br><span class="line">  &quot;disable&quot;: &quot;Disable&quot;,</span><br><span class="line">  &quot;length-unit-m&quot;: &quot;m&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>2.导入 json 数据后,目标 Excel 文件的样子(Key 跟 value 分开不同的列)</li>
+</ul>
+<p><img src="http://pic.pgyjz.cn/blog/Office/Snip20200224_4.png" alt></p>
+<h4 id="2-步骤"><a href="#2-步骤" class="headerlink" title="2.步骤:"></a>2.步骤:</h4><ul>
+<li>1.在 Excel 中选择 Data -&gt; Get External Data -&gt; Import Text File</li>
+</ul>
+<p><img src="http://pic.pgyjz.cn/blog/Office/Snip20200224_2.png" alt><br><img src="http://pic.pgyjz.cn/blog/Office/Snip20200224_5.png" alt></p>
+<ul>
+<li>2.选择 Delimited</li>
+</ul>
+<p><img src="http://pic.pgyjz.cn/blog/Office/Snip20200224_6.png" alt></p>
+<ul>
+<li>3.根据自己的需求去选择不同的配置，我这里选择了 Common,Space, 自添加了 colon :.</li>
+</ul>
+<p><img src="http://pic.pgyjz.cn/blog/Office/screenshot_2020-02-24_at_14.52.54.png" alt></p>
+<ul>
+<li>4.选择 Do not import column(Skip)</li>
+</ul>
+<p><img src="http://pic.pgyjz.cn/blog/Office/screenshot_2020-02-24_at_14.53.09.png" alt></p>
+<ul>
+<li>5.选择 new sheet, 及可以在新的 Tab 中看到 json 的 key -&gt; value 已经成功被导入.</li>
+</ul>
+<h4 id="3-注意："><a href="#3-注意：" class="headerlink" title="3.注意："></a>3.注意：</h4><ul>
+<li><p>1.JSON 文件的 value 值中不要有 双引号(“”), 否则 Excel 中解析出来会错误.<br><img src="http://pic.pgyjz.cn/blog/Office/Snip20200224_22.png" alt><br><img src="http://pic.pgyjz.cn/blog/Office/Snip20200224_21.png" alt></p>
+</li>
+<li><p>2.如果有双引号，请把它变为单引号 (‘’), 这样输出的 Excel 文件就会正常了.</p>
+</li>
+</ul>
+<p><img src="http://pic.pgyjz.cn/blog/Office/Snip20200224_23.png" alt><br><img src="http://pic.pgyjz.cn/blog/Office/Snip20200224_24.png" alt></p>
+<hr>
+<h2 id="2-从-Excel-中导出数据到-JSON-文件-1"><a href="#2-从-Excel-中导出数据到-JSON-文件-1" class="headerlink" title="2.从 Excel 中导出数据到 JSON 文件."></a>2.从 Excel 中导出数据到 JSON 文件.</h2><ul>
+<li>1.参考: <a href="http://www.convertcsv.com/csv-to-json.htm" target="_blank" rel="noopener"> CSV -&gt; JSON </a></li>
+</ul>
+<h4 id="1-把-xlsx-格式转换为-CSV-格式"><a href="#1-把-xlsx-格式转换为-CSV-格式" class="headerlink" title="1.把 xlsx 格式转换为 CSV 格式"></a>1.把 xlsx 格式转换为 CSV 格式</h4><ul>
+<li>1.File -&gt; <code>Save as ...</code> -&gt; 选择 CSV 格式，然后保存.</li>
+</ul>
+<p><img src="http://pic.pgyjz.cn/blog/Office/Snip20200224_18.png" alt><br><img src="http://pic.pgyjz.cn/blog/Office/Snip20200224_19.png" alt></p>
+<ul>
+<li><p>2.进入网站 <a href="http://www.convertcsv.com/csv-to-json.htm" target="_blank" rel="noopener">http://www.convertcsv.com/csv-to-json.htm</a> , 在 Step1 处选择 刚刚生成的 CSV 文件.</p>
+</li>
+<li><p>3.Step2:选择 <code>Skip # of lines:0</code>, Tab 为选中的状态.</p>
+</li>
+</ul>
+<p><img src="http://pic.pgyjz.cn/blog/Office/Snip20200224_29.png" alt></p>
+<ul>
+<li>4.Step3 的选择如图所示, Step4 输入自己的 JSON 模板，然后点击 <code>Convert CSV to Json via template</code></li>
+</ul>
+<p><img src="http://pic.pgyjz.cn/blog/Office/Snip20200224_30.png" alt><br><img src="http://pic.pgyjz.cn/blog/Office/Snip20200224_31.png" alt></p>
+<ul>
+<li>5.Step5,直接点击 <code>Download result</code> 即可，无需做其它的操作.</li>
+</ul>
+<p><img src="http://pic.pgyjz.cn/blog/Office/Snip20200224_32.png" alt></p>
+<ul>
+<li>6.因为我们生成的 json 文件会包括空字符键值对: <code>&quot;&quot;:&quot;&quot;</code>, 所以我们把它全部替换成空格即可.</li>
+</ul>
+<p><img src="http://pic.pgyjz.cn/blog/Office/Snip20200224_33.png" alt></p>
+<ul>
+<li>7.用 JSON 对比工具，可以看到生成的文件与目标文件现在完全一致了.</li>
+</ul>
+<p><img src="http://pic.pgyjz.cn/blog/Office/Snip20200224_34.png" alt></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='blog-comments'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
+        data-d=''
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1573019751/TriDiamond_logo_ui_xeublz.jpg" height=300 width=300></img>
+                    <p>Tim</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        <dd><a href="https://github.com/TriDiamond" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/TriDiamond6" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="https://stackoverflow.com/users/7602324/tridiamond?tab=profile" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">89 <p>Articles</p></a></li>
+                    <li><a href="/categories">26 <p>Categories</p></a></li>
+                    <li><a href="/tags">23 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-从-JSON-文件中导入数据到-Excel-Mac-excel-2016"><span class="toc-number">1.</span> <span class="toc-text">1.从 JSON 文件中导入数据到 Excel(Mac excel 2016)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-从-Excel-中导出数据到-JSON-文件"><span class="toc-number">2.</span> <span class="toc-text">2.从 Excel 中导出数据到 JSON 文件.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-从-JSON-文件中导入数据到-Excel-Mac-excel-2016-1"><span class="toc-number">3.</span> <span class="toc-text">1.从 JSON 文件中导入数据到 Excel(Mac excel 2016)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-从-Excel-中导出数据到-JSON-文件-1"><span class="toc-number">4.</span> <span class="toc-text">2.从 Excel 中导出数据到 JSON 文件.</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2020
+        <span class="gradient-text">
+            Tim
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+    <script src="/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149874671-1');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>

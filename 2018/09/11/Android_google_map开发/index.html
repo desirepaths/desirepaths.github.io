@@ -1,0 +1,474 @@
+
+<!DOCTYPE html>
+<html lang="中文" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Android Google Map 开发 - desirepaths 的博客</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="个人目标：随性而为!.,
+记录 Android_google开发 相关的过程
+
+
+1.参考2.Google 例子3.取得当前位置的经纬度4.国内国外地图切换
+
+
+1.参考
+1.Maps SDK for Android:Ge,"> 
+    <meta name="author" content="Tim"> 
+    <link rel="alternative" href="atom.xml" title="desirepaths 的博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
+    <link rel="stylesheet" href="/css/ball-atom.min.css">
+</head>
+</html>
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">desirepaths 的博客</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://yoursite.com">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">Android Google Map 开发</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg) ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/Android"><b>「
+                    </b>ANDROID<b> 」</b></a>
+                
+                September 11, 2018
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2018/09/11/Android_google_map开发/" title="Android Google Map 开发">Android Google Map 开发</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    26k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    23 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Android/">Android</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <blockquote>
+<p>记录 Android_google开发 相关的过程</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="1-参考"><a href="#1-参考" class="headerlink" title="1.参考"></a><a href="#references">1.参考</a></h2><h2 id="2-Google-例子"><a href="#2-Google-例子" class="headerlink" title="2.Google 例子"></a><a href="#google_map_demo">2.Google 例子</a></h2><h2 id="3-取得当前位置的经纬度"><a href="#3-取得当前位置的经纬度" class="headerlink" title="3.取得当前位置的经纬度"></a><a href="#get_current_location">3.取得当前位置的经纬度</a></h2><h2 id="4-国内国外地图切换"><a href="#4-国内国外地图切换" class="headerlink" title="4.国内国外地图切换"></a><a href="#amap_switch">4.国内国外地图切换</a></h2><hr>
+<hr>
+<hr>
+<h2 id="1-参考-1"><a href="#1-参考-1" class="headerlink" title="1.参考"></a>1.参考<a name="references"></a></h2><ul>
+<li><a href="https://developers.google.com/maps/documentation/android-sdk/start" target="_blank" rel="noopener">1.Maps SDK for Android:Get Started</a></li>
+<li><a href="https://github.com/googlemaps/android-samples" target="_blank" rel="noopener">2.GitHub:Google Maps Android API v2 Samples</a></li>
+<li><a href="https://lbs.amap.com/dev/demo/switch-map#Android" target="_blank" rel="noopener">3.高德:国内国外地图切换</a></li>
+</ul>
+<hr>
+<h2 id="2-Google-例子-1"><a href="#2-Google-例子-1" class="headerlink" title="2.Google 例子"></a>2.Google 例子<a name="google_map_demo"></a></h2><blockquote>
+<p>记录 Google maps Demo 的搭建过程.</p>
+</blockquote>
+<ul>
+<li>1.从 <a href="https://github.com/googlemaps/android-samples" target="_blank" rel="noopener">GitHub google maps 下载 DEMO</a></li>
+<li>2.用 AS 打开 <code>DEMO</code> 中的 <code>ApiDemos/java</code> 项目(因为我们只要开发 java 环境下的 手机端 map)</li>
+<li>3.到 <a href="https://console.developers.google.com/" target="_blank" rel="noopener">Google Maps 控制台</a> 去申请一个 <code>API KEY</code>,然后填入项目 <code>AndroidManifest.xml</code> 中.<ul>
+<li>1.过程中需要用到 <code>DEBUG</code> 和 <code>RELEASE</code> 的 <code>SHA-1</code>,具体的方法请查看: <a href="https://developers.google.com/maps/documentation/android-sdk/signup" target="_blank" rel="noopener">Get API Key</a></li>
+<li>2.相关的图片:<br><img src="/assets/imgs/Android/Snip20180911_11.png" width="80%" height="80%"></li>
+<li>3.把得到的 KEY 填入 <code>AndroidManifest.xml</code> 的 <code>android:name=&quot;com.google.android.geo.API_KEY</code> 中…..</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="3-取得当前位置的经纬度-1"><a href="#3-取得当前位置的经纬度-1" class="headerlink" title="3.取得当前位置的经纬度"></a>3.取得当前位置的经纬度<a name="get_current_location"></a></h2><h4 id="1-相关的包的导入"><a href="#1-相关的包的导入" class="headerlink" title="1.相关的包的导入"></a>1.相关的包的导入</h4><blockquote>
+<p>不要在 <code>build.gradle</code> 中直接导入 <code>compile &#39;com.google.android.gms:play-services:9.0.1&#39;</code> ,因为 Android 的项目有 <code>65535</code> 的限制,要根据需要导入必要的包: 如:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">compile &apos;com.google.android.gms:play-services-maps:9.0.1&apos;</span><br><span class="line">compile &apos;com.google.android.gms:play-services-location:9.0.1&apos;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="https://stackoverflow.com/questions/25370598/cant-import-com-google-android-gms-location-locationservices" target="_blank" rel="noopener">1.参考1</a></li>
+<li><a href="https://developers.google.com/android/guides/setup#add_google_play_services_to_your_project" target="_blank" rel="noopener">2.参考2</a></li>
+</ul>
+<h4 id="2-获取当前位置的代码-相关的-GitHub-源码"><a href="#2-获取当前位置的代码-相关的-GitHub-源码" class="headerlink" title="2.获取当前位置的代码,相关的 GitHub 源码:"></a>2.获取当前位置的代码,<a href="https://github.com/ghzjtian/android-samples" target="_blank" rel="noopener">相关的 GitHub 源码</a>:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br></pre></td><td class="code"><pre><span class="line">package com.example.mapdemo;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import android.content.pm.PackageManager;</span><br><span class="line">import android.location.Location;</span><br><span class="line">import android.support.annotation.NonNull;</span><br><span class="line">import android.support.annotation.Nullable;</span><br><span class="line">import android.support.v4.app.ActivityCompat;</span><br><span class="line">import android.support.v4.app.FragmentActivity;</span><br><span class="line">import android.os.Bundle;</span><br><span class="line">import android.support.v7.app.AppCompatActivity;</span><br><span class="line">import android.util.Log;</span><br><span class="line">import android.view.View;</span><br><span class="line">import android.widget.Toast;</span><br><span class="line"></span><br><span class="line">import com.google.android.gms.common.ConnectionResult;</span><br><span class="line">import com.google.android.gms.common.api.GoogleApiClient;</span><br><span class="line">import com.google.android.gms.location.FusedLocationProviderClient;</span><br><span class="line">import com.google.android.gms.location.LocationServices;</span><br><span class="line">import com.google.android.gms.maps.CameraUpdateFactory;</span><br><span class="line">import com.google.android.gms.maps.GoogleMap;</span><br><span class="line">import com.google.android.gms.maps.OnMapReadyCallback;</span><br><span class="line">import com.google.android.gms.maps.SupportMapFragment;</span><br><span class="line">import com.google.android.gms.maps.model.LatLng;</span><br><span class="line">import com.google.android.gms.maps.model.Marker;</span><br><span class="line">import com.google.android.gms.maps.model.MarkerOptions;</span><br><span class="line">import com.google.android.gms.tasks.OnSuccessListener;</span><br><span class="line"></span><br><span class="line">public class GetMyLocationDemoActivity extends AppCompatActivity implements OnMapReadyCallback,</span><br><span class="line">        GoogleApiClient.ConnectionCallbacks,</span><br><span class="line">        GoogleApiClient.OnConnectionFailedListener,</span><br><span class="line">        GoogleMap.OnMarkerDragListener,</span><br><span class="line">        GoogleMap.OnMapLongClickListener,</span><br><span class="line">        GoogleMap.OnMarkerClickListener,</span><br><span class="line">        View.OnClickListener &#123;</span><br><span class="line"></span><br><span class="line">    private static final String TAG = &quot;MapsActivity&quot;;</span><br><span class="line">    private GoogleMap mMap;</span><br><span class="line">    private double longitude;</span><br><span class="line">    private double latitude;</span><br><span class="line">    private GoogleApiClient googleApiClient;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.my_location_demo);</span><br><span class="line"></span><br><span class="line">        // Obtain the SupportMapFragment and get notified when the map is ready to be used.</span><br><span class="line">        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()</span><br><span class="line">                .findFragmentById(R.id.map);</span><br><span class="line">        mapFragment.getMapAsync(this);</span><br><span class="line"></span><br><span class="line">        //Initializing googleApiClient</span><br><span class="line">        googleApiClient = new GoogleApiClient.Builder(this)</span><br><span class="line">                .addConnectionCallbacks(this)</span><br><span class="line">                .addOnConnectionFailedListener(this)</span><br><span class="line">                .addApi(LocationServices.API)</span><br><span class="line">                .build();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onMapReady(GoogleMap googleMap) &#123;</span><br><span class="line">        mMap = googleMap;</span><br><span class="line">        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);</span><br><span class="line">        // googleMapOptions.mapType(googleMap.MAP_TYPE_HYBRID)</span><br><span class="line">        //    .compassEnabled(true);</span><br><span class="line"></span><br><span class="line">        // Add a marker in Sydney and move the camera</span><br><span class="line">        LatLng india = new LatLng(-34, 151);</span><br><span class="line">        mMap.addMarker(new MarkerOptions().position(india).title(&quot;Marker in India&quot;));</span><br><span class="line">        mMap.moveCamera(CameraUpdateFactory.newLatLng(india));</span><br><span class="line">        mMap.setOnMarkerDragListener(this);</span><br><span class="line">        mMap.setOnMapLongClickListener(this);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //Getting current location</span><br><span class="line">    private void getCurrentLocation() &#123;</span><br><span class="line">        mMap.clear();</span><br><span class="line">        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &amp;&amp; ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) &#123;</span><br><span class="line">            // TODO: Consider calling</span><br><span class="line">            //    ActivityCompat#requestPermissions</span><br><span class="line">            // here to request the missing permissions, and then overriding</span><br><span class="line">            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,</span><br><span class="line">            //                                          int[] grantResults)</span><br><span class="line">            // to handle the case where the user grants the permission. See the documentation</span><br><span class="line">            // for ActivityCompat#requestPermissions for more details.</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">//        Location location = LocationServices.FusedLocationApi.getLastLocation(googleApiClient);</span><br><span class="line">//        if (location != null) &#123;</span><br><span class="line">//            //Getting longitude and latitude</span><br><span class="line">//            longitude = location.getLongitude();</span><br><span class="line">//            latitude = location.getLatitude();</span><br><span class="line">//</span><br><span class="line">//            //moving the map to location</span><br><span class="line">//            moveMap();</span><br><span class="line">//        &#125;</span><br><span class="line"></span><br><span class="line">        //参考:  https://stackoverflow.com/questions/46481789/android-locationservices-fusedlocationapi-deprecated</span><br><span class="line">        FusedLocationProviderClient mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);</span><br><span class="line"></span><br><span class="line">        mFusedLocationClient.getLastLocation()</span><br><span class="line">                .addOnSuccessListener(this, new OnSuccessListener&lt;Location&gt;() &#123;</span><br><span class="line">                    @Override</span><br><span class="line">                    public void onSuccess(Location location) &#123;</span><br><span class="line">                        // Got last known location. In some rare situations, this can be null.</span><br><span class="line">                        if (location != null) &#123;</span><br><span class="line">                            Log.w(TAG,&quot;location,Latitude:&quot;+location.getLatitude()+&quot; Longtitude:&quot;+location.getLongitude());</span><br><span class="line">                            // Logic to handle location object</span><br><span class="line">                            //Getting longitude and latitude</span><br><span class="line">                            longitude = location.getLongitude();</span><br><span class="line">                            latitude = location.getLatitude();</span><br><span class="line"></span><br><span class="line">                            //moving the map to location</span><br><span class="line">                            moveMap();</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void moveMap() &#123;</span><br><span class="line">        /**</span><br><span class="line">         * Creating the latlng object to store lat, long coordinates</span><br><span class="line">         * adding marker to map</span><br><span class="line">         * move the camera with animation</span><br><span class="line">         */</span><br><span class="line">        LatLng latLng = new LatLng(latitude, longitude);</span><br><span class="line">        mMap.addMarker(new MarkerOptions()</span><br><span class="line">                .position(latLng)</span><br><span class="line">                .draggable(true)</span><br><span class="line">                .title(&quot;Marker in India&quot;));</span><br><span class="line"></span><br><span class="line">        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));</span><br><span class="line">        mMap.animateCamera(CameraUpdateFactory.zoomTo(15));</span><br><span class="line">        mMap.getUiSettings().setZoomControlsEnabled(true);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onClick(View view) &#123;</span><br><span class="line">        Log.v(TAG, &quot;view click event&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onConnected(@Nullable Bundle bundle) &#123;</span><br><span class="line">        getCurrentLocation();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onConnectionSuspended(int i) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onMapLongClick(LatLng latLng) &#123;</span><br><span class="line">        // mMap.clear();</span><br><span class="line">        mMap.addMarker(new MarkerOptions().position(latLng).draggable(true));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onMarkerDragStart(Marker marker) &#123;</span><br><span class="line">        Toast.makeText(GetMyLocationDemoActivity.this, &quot;onMarkerDragStart&quot;, Toast.LENGTH_SHORT).show();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onMarkerDrag(Marker marker) &#123;</span><br><span class="line">        Toast.makeText(GetMyLocationDemoActivity.this, &quot;onMarkerDrag&quot;, Toast.LENGTH_SHORT).show();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onMarkerDragEnd(Marker marker) &#123;</span><br><span class="line">        // getting the Co-ordinates</span><br><span class="line">        latitude = marker.getPosition().latitude;</span><br><span class="line">        longitude = marker.getPosition().longitude;</span><br><span class="line"></span><br><span class="line">        //move to current position</span><br><span class="line">        moveMap();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onStart() &#123;</span><br><span class="line">        googleApiClient.connect();</span><br><span class="line">        super.onStart();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onStop() &#123;</span><br><span class="line">        googleApiClient.disconnect();</span><br><span class="line">        super.onStop();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public boolean onMarkerClick(Marker marker) &#123;</span><br><span class="line">        Toast.makeText(GetMyLocationDemoActivity.this, &quot;onMarkerClick&quot;, Toast.LENGTH_SHORT).show();</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-发现-google-map-地图的坐标在国内显示有偏差"><a href="#3-发现-google-map-地图的坐标在国内显示有偏差" class="headerlink" title="3.发现 google map 地图的坐标在国内显示有偏差"></a>3.发现 google map 地图的坐标在国内显示有偏差</h3><ul>
+<li>1.原因及解决的方法:<ul>
+<li><a href="https://www.jianshu.com/p/c39a2c72dc65" target="_blank" rel="noopener">1.地图坐标转换（火星、谷歌、百度、腾讯、高德等坐标）</a></li>
+</ul>
+</li>
+<li>2.转换前后的对比:<ul>
+<li>1.转换前:<br><img src="/assets/imgs/Android/Screenshot_20180911-162321.png" width="50%" height="50%"><ul>
+<li>2.转换后:<br><img src="/assets/imgs/Android/Screenshot_20180911-165421.png" width="50%" height="50%"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="4-国内国外地图切换-1"><a href="#4-国内国外地图切换-1" class="headerlink" title="4.国内国外地图切换"></a>4.国内国外地图切换<a name="amap_switch"></a></h2><ul>
+<li>1.参考 <a href="https://lbs.amap.com/dev/demo/switch-map#Android" target="_blank" rel="noopener">高德 国内国外地图切换</a></li>
+<li><a href="https://sxgfxm.github.io/blog/2016/10/19/iospan-duan-gpszuo-biao-shi-fou-zai-zhong-guo/" target="_blank" rel="noopener">2.参考: iOS判断GPS坐标是否在中国</a></li>
+<li><a href="https://lbs.amap.com/api/android-location-sdk/guide/additional-func/amap-calculate-tool" target="_blank" rel="noopener">3.高德:坐标转换与位置判断(更加的准确)</a></li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='blog-comments'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
+        data-d=''
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1573019751/TriDiamond_logo_ui_xeublz.jpg" height=300 width=300></img>
+                    <p>Tim</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        <dd><a href="https://github.com/TriDiamond" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/TriDiamond6" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="https://stackoverflow.com/users/7602324/tridiamond?tab=profile" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">89 <p>Articles</p></a></li>
+                    <li><a href="/categories">26 <p>Categories</p></a></li>
+                    <li><a href="/tags">23 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-参考"><span class="toc-number">1.</span> <span class="toc-text">1.参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Google-例子"><span class="toc-number">2.</span> <span class="toc-text">2.Google 例子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-取得当前位置的经纬度"><span class="toc-number">3.</span> <span class="toc-text">3.取得当前位置的经纬度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-国内国外地图切换"><span class="toc-number">4.</span> <span class="toc-text">4.国内国外地图切换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-参考-1"><span class="toc-number">5.</span> <span class="toc-text">1.参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Google-例子-1"><span class="toc-number">6.</span> <span class="toc-text">2.Google 例子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-取得当前位置的经纬度-1"><span class="toc-number">7.</span> <span class="toc-text">3.取得当前位置的经纬度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-发现-google-map-地图的坐标在国内显示有偏差"><span class="toc-number">7.1.</span> <span class="toc-text">3.发现 google map 地图的坐标在国内显示有偏差</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-国内国外地图切换-1"><span class="toc-number">8.</span> <span class="toc-text">4.国内国外地图切换</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2020
+        <span class="gradient-text">
+            Tim
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+    <script src="/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149874671-1');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>

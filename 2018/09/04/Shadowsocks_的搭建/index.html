@@ -1,0 +1,493 @@
+
+<!DOCTYPE html>
+<html lang="中文" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Shadowsocks 的搭建 - desirepaths 的博客</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="个人目标：随性而为!.,Shadowsocks 的搭建
+关于 Shadowsocks 的搭建计划.
+
+
+1.shadowsocks-libev 的安装2.shadowsocks-libev 的多用户搭建3.相关的控制的命令,"> 
+    <meta name="author" content="Tim"> 
+    <link rel="alternative" href="atom.xml" title="desirepaths 的博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
+    <link rel="stylesheet" href="/css/ball-atom.min.css">
+</head>
+</html>
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">desirepaths 的博客</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://yoursite.com">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">Shadowsocks 的搭建</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg) ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/ss"><b>「
+                    </b>SS<b> 」</b></a>
+                
+                September 04, 2018
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2018/09/04/Shadowsocks_的搭建/" title="Shadowsocks 的搭建">Shadowsocks 的搭建</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    6.3k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    6 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/ss/">ss</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h3 id="Shadowsocks-的搭建"><a href="#Shadowsocks-的搭建" class="headerlink" title="Shadowsocks 的搭建"></a>Shadowsocks 的搭建</h3><blockquote>
+<p>关于 Shadowsocks 的搭建计划.</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="1-shadowsocks-libev-的安装"><a href="#1-shadowsocks-libev-的安装" class="headerlink" title="1.shadowsocks-libev 的安装"></a><a href="#ss_install">1.shadowsocks-libev 的安装</a></h3><h3 id="2-shadowsocks-libev-的多用户搭建"><a href="#2-shadowsocks-libev-的多用户搭建" class="headerlink" title="2.shadowsocks-libev 的多用户搭建"></a><a href="#ss_multi_user">2.shadowsocks-libev 的多用户搭建</a></h3><h3 id="3-相关的控制的命令"><a href="#3-相关的控制的命令" class="headerlink" title="3.相关的控制的命令"></a><a href="#related_command">3.相关的控制的命令</a></h3><h3 id="4-相关的软件"><a href="#4-相关的软件" class="headerlink" title="4.相关的软件"></a><a href="#related_software">4.相关的软件</a></h3><h3 id="5-相关端口被屏蔽"><a href="#5-相关端口被屏蔽" class="headerlink" title="5.相关端口被屏蔽"></a><a href="#related_port_shield">5.相关端口被屏蔽</a></h3><h3 id="6-客户端设置的分享"><a href="#6-客户端设置的分享" class="headerlink" title="6.客户端设置的分享"></a><a href="#share_settings">6.客户端设置的分享</a></h3><hr>
+<hr>
+<hr>
+<h3 id="1-Shadowsocks-libev-的安装"><a href="#1-Shadowsocks-libev-的安装" class="headerlink" title="1.Shadowsocks-libev 的安装"></a>1.Shadowsocks-libev 的安装<a name="ss_install"></a></h3><ul>
+<li><a href="https://github.com/shadowsocks/shadowsocks-libev" target="_blank" rel="noopener">1.官方的 Github 安装介绍</a></li>
+</ul>
+<hr>
+<h3 id="2-shadowsocks-libev-的多用户搭建-1"><a href="#2-shadowsocks-libev-的多用户搭建-1" class="headerlink" title="2.shadowsocks-libev 的多用户搭建"></a>2.shadowsocks-libev 的多用户搭建<a name="ss_multi_user"></a></h3><ul>
+<li><a href="https://github.com/shadowsocks/shadowsocks-libev/issues/5" target="_blank" rel="noopener">1.多用户的搭建</a></li>
+<li>2.教程:<ul>
+<li>1.到 <code>/etc/shadowsocks-libev</code> 中复制一个 <code>config.json</code> 文件，并修改为想要的设置</li>
+<li>2.然后用 <code>ss-server</code> 配置,配置完就重启,<code>ss-server -c config1.json -f pid1</code></li>
+<li>3.如果有多个用户,就继续下面的配置(记得要有 configX.json 文件)<ul>
+<li>1.<code>ss-server -c config2.json -f pid2</code></li>
+<li>2.<code>ss-server -c config3.json -f pid3</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>3.Config.json 文件的配置 DEMO:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">user@Company:/etc# cat /etc/shadowsocks-libev/config.json</span><br><span class="line">&#123;</span><br><span class="line">    &quot;server&quot;:&quot;104.238.114.125&quot;,</span><br><span class="line">    &quot;server_port&quot;:8191,</span><br><span class="line">    &quot;local_port&quot;:1080,</span><br><span class="line">    &quot;password&quot;:&quot;111111&quot;,</span><br><span class="line">    &quot;timeout&quot;:60,</span><br><span class="line">    &quot;method&quot;:&quot;aes-256-cfb&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="3-相关的控制的命令-1"><a href="#3-相关的控制的命令-1" class="headerlink" title="3.相关的控制的命令"></a>3.相关的控制的命令<a name="related_command"></a></h3><ul>
+<li>1.查看端口使用情况: <code>netstat －antu</code>.</li>
+<li>2.启动、停止、重启: <code>service shadowsocks-libev start/stop/restart</code><ul>
+<li>1.注意，如果是多用户的话，上面的命令只会对 <code>config.json</code> 有用.(同样原理适用于主机重启后 !! 所以主机重启后务必检查相关的端口配置有没有开启 !!!)<ul>
+<li>1.停止: <ul>
+<li>1.用 <code>netstat -tlnp</code> 或 <code>ps -aux | less</code> 查看了程序的 <code>PID</code> 号后，就用 <code>kill -9 xxx(pid)</code> 去杀死指定 PID 的程序.</li>
+</ul>
+</li>
+<li>2.开始: <code>ss-server -c config3.json -f pid3</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="4-相关的软件-1"><a href="#4-相关的软件-1" class="headerlink" title="4.相关的软件"></a>4.相关的软件<a name="related_software"></a></h3><ul>
+<li>1.TCP BBR 拥堵控制算法 的开启:<ul>
+<li><a href="https://fiveyellowmice.com/posts/2016/12/bbr-congestion-algorithm-dark-science.html" target="_blank" rel="noopener">1.BBR 阻塞算法，真是黑科技</a></li>
+<li><a href="https://sb.sb/blog/debian-ubuntu-tcp-bbr/" target="_blank" rel="noopener">2.Debian / Ubuntu 更新内核并开启 TCP BBR 拥塞控制算法</a></li>
+</ul>
+</li>
+<li><p><a href="https://www.howtoforge.com/tutorial/check-internet-speed-with-speedtest-cli-on-ubuntu/" target="_blank" rel="noopener">2.speedtest-cli测速工具</a></p>
+</li>
+<li><p>3.搭建过程:</p>
+<ul>
+<li>1.内核查看的命令 <code>cat /proc/version</code></li>
+<li>2.过程(摘自<a href="https://fiveyellowmice.com/posts/2016/12/bbr-congestion-algorithm-dark-science.html" target="_blank" rel="noopener">1.BBR 阻塞算法，真是黑科技</a>):</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">加载内核模块。</span><br><span class="line">先运行 sudo modprobe tcp_bbr 看一看，没问题的话，就创建一个 /etc/modules-load.d/80-bbr.conf ，里面写上 tcp_bbr 七个字，就会每次开机自动加载 tcp_bbr 模块了。</span><br><span class="line">让内核使用 BBR 为阻塞控制算法。</span><br><span class="line">cat /proc/sys/net/ipv4/tcp_available_congestion_control 看看里面有没有 bbr 三个字。</span><br><span class="line">没问题的话， sudo sysctl net.ipv4.tcp_congestion_control=bbr 来启用 BBR 。</span><br><span class="line">除非你想每次开机都运行一遍 sysctl ，记得创建一个 /etc/sysctl.d/80-bbr.conf ，写上 net.ipv4.tcp_congestion_control = bbr 就可以了。</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="5-相关端口被屏蔽-1"><a href="#5-相关端口被屏蔽-1" class="headerlink" title="5.相关端口被屏蔽"></a>5.相关端口被屏蔽<a name="related_port_shield"></a></h3><ul>
+<li>1.发现（20190304）一个端口 <code>9005</code> 不能连接成功，经过测试，发现是被国内屏蔽了.<ul>
+<li>1.测试过程:<ul>
+<li>1.本地的 Mac 用 <code>nc -v 62.42.41.223 9005</code> 不通过.</li>
+<li>2.外国的 Linux Debian 用 <code>nc -v 62.42.41.223 9005</code> 通过.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="6-客户端设置的分享-1"><a href="#6-客户端设置的分享-1" class="headerlink" title="6.客户端设置的分享"></a>6.客户端设置的分享<a name="share_settings"></a></h3><ul>
+<li>1.遇到的 Bug:<ul>
+<li>1.经过实战发现,如果是用 ShadowsocksX-NG(for mac)相关的二维码分享,旧版本的 Shadowsocks(Android 或 Windows ) 都不会被识别，所以要分享 二维码的图片，还是要用旧版本的 Windows 客户端去做分享.</li>
+</ul>
+</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='blog-comments'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
+        data-d=''
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1573019751/TriDiamond_logo_ui_xeublz.jpg" height=300 width=300></img>
+                    <p>Tim</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        <dd><a href="https://github.com/TriDiamond" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/TriDiamond6" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="https://stackoverflow.com/users/7602324/tridiamond?tab=profile" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">89 <p>Articles</p></a></li>
+                    <li><a href="/categories">26 <p>Categories</p></a></li>
+                    <li><a href="/tags">23 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Shadowsocks-的搭建"><span class="toc-number">1.</span> <span class="toc-text">Shadowsocks 的搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-shadowsocks-libev-的安装"><span class="toc-number">2.</span> <span class="toc-text">1.shadowsocks-libev 的安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-shadowsocks-libev-的多用户搭建"><span class="toc-number">3.</span> <span class="toc-text">2.shadowsocks-libev 的多用户搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-相关的控制的命令"><span class="toc-number">4.</span> <span class="toc-text">3.相关的控制的命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-相关的软件"><span class="toc-number">5.</span> <span class="toc-text">4.相关的软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-相关端口被屏蔽"><span class="toc-number">6.</span> <span class="toc-text">5.相关端口被屏蔽</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-客户端设置的分享"><span class="toc-number">7.</span> <span class="toc-text">6.客户端设置的分享</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Shadowsocks-libev-的安装"><span class="toc-number">8.</span> <span class="toc-text">1.Shadowsocks-libev 的安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-shadowsocks-libev-的多用户搭建-1"><span class="toc-number">9.</span> <span class="toc-text">2.shadowsocks-libev 的多用户搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-相关的控制的命令-1"><span class="toc-number">10.</span> <span class="toc-text">3.相关的控制的命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-相关的软件-1"><span class="toc-number">11.</span> <span class="toc-text">4.相关的软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-相关端口被屏蔽-1"><span class="toc-number">12.</span> <span class="toc-text">5.相关端口被屏蔽</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-客户端设置的分享-1"><span class="toc-number">13.</span> <span class="toc-text">6.客户端设置的分享</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2020
+        <span class="gradient-text">
+            Tim
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+    <script src="/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149874671-1');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>

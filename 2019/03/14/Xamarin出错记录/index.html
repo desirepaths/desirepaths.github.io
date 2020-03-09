@@ -1,0 +1,525 @@
+
+<!DOCTYPE html>
+<html lang="中文" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Xamarin出错记录 - desirepaths 的博客</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="个人目标：随性而为!.,
+记录下 Xamarin 在 Visual Studio for Mac 环境下的错误及解决方法
+
+
+1.错误及解决方法的记录
+1.错误及解决方法的记录
+如果遇到奇怪的错误(第一次编译运行可以，没任,"> 
+    <meta name="author" content="Tim"> 
+    <link rel="alternative" href="atom.xml" title="desirepaths 的博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
+    <link rel="stylesheet" href="/css/ball-atom.min.css">
+</head>
+</html>
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">desirepaths 的博客</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://yoursite.com">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">Xamarin出错记录</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg) ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/Xamarin"><b>「
+                    </b>XAMARIN<b> 」</b></a>
+                
+                March 14, 2019
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/03/14/Xamarin出错记录/" title="Xamarin出错记录">Xamarin出错记录</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    13k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    12 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Xamarin/">Xamarin</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <blockquote>
+<p>记录下 Xamarin 在 <code>Visual Studio for Mac</code> 环境下的错误及解决方法</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="1-错误及解决方法的记录"><a href="#1-错误及解决方法的记录" class="headerlink" title="1.错误及解决方法的记录"></a>1.错误及解决方法的记录</h2><hr>
+<h2 id="1-错误及解决方法的记录-1"><a href="#1-错误及解决方法的记录-1" class="headerlink" title="1.错误及解决方法的记录"></a>1.错误及解决方法的记录</h2><blockquote>
+<p>如果遇到奇怪的错误(第一次编译运行可以，没任何改动，第二次编译运行却不能运行)，可以先 卸载 了 APP,清理 VS 的缓存,然后再重新运行.<br>最好用 iOS 去运行测试.</p>
+</blockquote>
+<h3 id="1-Xamarin-项目编译时-出现-The-quot-Microsoft-Build-Tasks-Git-LocateRepository-quot-task-failed-unexpectedly-System-BadImageFormatException-Method-has-no-body-Error"><a href="#1-Xamarin-项目编译时-出现-The-quot-Microsoft-Build-Tasks-Git-LocateRepository-quot-task-failed-unexpectedly-System-BadImageFormatException-Method-has-no-body-Error" class="headerlink" title="1.Xamarin 项目编译时,出现 The &quot;Microsoft.Build.Tasks.Git.LocateRepository&quot; task failed unexpectedly.System.BadImageFormatException: Method has no body Error."></a>1.Xamarin 项目编译时,出现 <code>The &quot;Microsoft.Build.Tasks.Git.LocateRepository&quot; task failed unexpectedly.System.BadImageFormatException: Method has no body</code> Error.</h3><ul>
+<li>1.查到信息可能是 <code>dotnet 的版本问题</code>: <a href="https://github.com/dotnet/sourcelink/issues/107" target="_blank" rel="noopener">The “Microsoft.Build.Tasks.Git.LocateRepository” task failed unexpectedly.</a><ul>
+<li>1.查看 Mac 中的 dotnet 的版本: <code>glb_gz$ dotnet --list-sdks
+2.1.302 [/usr/local/share/dotnet/sdk]</code></li>
+<li>2.下载 <code>dotnet</code> 安装包: <ul>
+<li>1.<a href="https://docs.microsoft.com/en-us/dotnet/core/tools/global-json" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/dotnet/core/tools/global-json</a></li>
+<li>2.<a href="https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.101-macos-x64-installer" target="_blank" rel="noopener">https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.101-macos-x64-installer</a></li>
+<li>3.然后重新打开项目并编译，但结果还是一样.</li>
+</ul>
+</li>
+<li>3.下载 <code>Microsoft.Build.Tasks</code> 包:<ul>
+<li>0.升级 VS  到 7.7,并且升级其他的一些工具,如: Mono,JDK,Xamarin.Android 等等.</li>
+<li>1.安装 PM 命令行工具到 VS 中: <a href="https://github.com/mrward/monodevelop-nuget-extensions#installation" target="_blank" rel="noopener">https://github.com/mrward/monodevelop-nuget-extensions</a></li>
+<li>2.安装 <code>Microsoft.Build.Tasks</code> 到项目中: <a href="https://www.nuget.org/packages/Microsoft.Build.Tasks.Git/" target="_blank" rel="noopener">https://www.nuget.org/packages/Microsoft.Build.Tasks.Git/</a></li>
+<li>3.在 <code>View/Pads/Package Console Extension</code> 中打开 <code>Package Console Extension</code>,然后安装 <code>Install-Package Microsoft.Build.Tasks.Git -Version 1.0.0-beta2-18618-05</code> ,但是没有成功，提示: <code>Command Install-Package not found</code>.  </li>
+<li>4.在 项目路径的终端中运行: <code>dotnet add package Microsoft.Build.Tasks.Git --version 1.0.0-beta2-18618-05</code> ,安装成功，但是还是报同样的错误.</li>
+</ul>
+</li>
+<li>4.正式放弃治疗!!!</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-获取项目文件数据的时候，出现-NULL-exception-error"><a href="#2-获取项目文件数据的时候，出现-NULL-exception-error" class="headerlink" title="2.获取项目文件数据的时候，出现 NULL exception error."></a>2.获取项目文件数据的时候，出现 <code>NULL exception error.</code></h3><ul>
+<li>1.用 <code>Assembly.GetExecutingAssembly().GetManifestResourceStream()</code>方法获取文件的数据时，一直返回 null.</li>
+<li>2.解决方法:<ul>
+<li>1.右击需要获取数据的文件(图片的获取也一样的道理)，然后选择 <code>Build Action</code> -&gt; <code>EmbeddedResource</code> ,就可以了.</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://pic.pgyjz.cn/blog/Xamarin/Snip20190118_1.png" alt></p>
+<h3 id="3-遇到错误-Error-APT0000-Error-retrieving-parent-for-item-No-resource-found-that-matches-the-given-name-39-Theme-AppCompat-Light-DarkActionBar-39-APT0000-BLE-APP2-Android"><a href="#3-遇到错误-Error-APT0000-Error-retrieving-parent-for-item-No-resource-found-that-matches-the-given-name-39-Theme-AppCompat-Light-DarkActionBar-39-APT0000-BLE-APP2-Android" class="headerlink" title="3.遇到错误 Error APT0000: Error retrieving parent for item: No resource found that matches the given name &#39;Theme.AppCompat.Light.DarkActionBar&#39;. (APT0000) (BLE_APP2.Android)"></a>3.遇到错误 <code>Error APT0000: Error retrieving parent for item: No resource found that matches the given name &#39;Theme.AppCompat.Light.DarkActionBar&#39;. (APT0000) (BLE_APP2.Android)</code></h3><ul>
+<li>1.查到是 Packages 中 <code>Android.Support.v7.AppCompat</code> 版本太低，所导致,遂想更新到最新的版本.</li>
+<li>2.无法更新，报错误 <code>Package Xamarin.Android.Support.Design 27.0.2.1 is not compatible with monoandroid71 (MonoAndroid,Version=v7.1). Package Xamarin.Android.Support.Design 27.0.2.1 supports: monoandroid81 (MonoAndroid,Version=v8.1)</code>.</li>
+<li>3.故想更新 <code>Mono.Android</code> 的版本，所以在 <code>右键 Project -&gt; options -&gt; Build -&gt; General -&gt; Compile using Android Version</code> 选择目标的版本即可.</li>
+<li>4.然后更新 <code>Android.Support.v7.AppCompat</code> ，就可以正常地编译运行了.</li>
+</ul>
+<h3 id="4-遇到错误-MTOUCH-Error-MT2101-Can-39-t-resolve-the-reference-referenced-from-the-method-MT2101-BLE-List-Connect-iOS"><a href="#4-遇到错误-MTOUCH-Error-MT2101-Can-39-t-resolve-the-reference-referenced-from-the-method-MT2101-BLE-List-Connect-iOS" class="headerlink" title="4.遇到错误 MTOUCH: Error MT2101: Can&#39;t resolve the reference ... , referenced from the method ... (MT2101) (BLE_List_Connect.iOS)"></a>4.遇到错误 <code>MTOUCH: Error MT2101: Can&#39;t resolve the reference ... , referenced from the method ... (MT2101) (BLE_List_Connect.iOS)</code></h3><ul>
+<li>1.把项目回退，然后再一个文件一个文件地添加,测试是否重现错误，.</li>
+</ul>
+<h3 id="5-遇到错误-在-MainPageViewModel-中取得-App-xaml-cs-中静态变量的值为空"><a href="#5-遇到错误-在-MainPageViewModel-中取得-App-xaml-cs-中静态变量的值为空" class="headerlink" title="5.遇到错误 在 MainPageViewModel 中取得 App.xaml.cs 中静态变量的值为空."></a>5.遇到错误 在 <code>MainPageViewModel</code> 中取得 <code>App.xaml.cs</code> 中静态变量的值为空.</h3><ul>
+<li><p>1.项目用 <code>Prism</code> 做基础的框架,然后从 <code>App.xaml.cs</code> 跳转到 <code>MainPageViewModel.cs</code> , <code>App.xaml.cs</code> 中有个 Static 变量，在 <code>MainPageViewModel.cs</code> 的构造方法中获取这个变量的值，会一直显示为 <code>null</code>.</p>
+<ul>
+<li>1.在除了 构造方法 的其他地方获取这个 Static 变量的值就没问题.</li>
+<li><p>2.尝试用 值传递的方式，直接传送数据到第二个页面(也是不行!!!).</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">protected override async void OnInitialized()</span><br><span class="line">      &#123;</span><br><span class="line">          InitializeComponent();</span><br><span class="line"></span><br><span class="line">          var navigationParams = new NavigationParameters();</span><br><span class="line">          navigationParams.Add(&quot;adapter&quot;,Adapter);</span><br><span class="line">          await NavigationService.NavigateAsync(&quot;NavigationPage/MainPage&quot;, navigationParams);</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>3.在 <code>MainPageViewModel.cs / OnNavigatedTo</code> 中获取这个 Static 的值，也是不行!!!</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-ble-net-包在-GG-项目中一直连接不成功"><a href="#6-ble-net-包在-GG-项目中一直连接不成功" class="headerlink" title="6.ble.net 包在 GG 项目中一直连接不成功."></a>6.<code>ble.net</code> 包在 GG 项目中一直连接不成功.</h3><ul>
+<li>0.iOS 手机.</li>
+<li>1.就算时回滚了项目也不行(以前是可以的).</li>
+<li>2.但 <code>Ble_list_conn</code> 项目用 <code>ble.net</code> 包，同样的手机就很正常.</li>
+<li>3.现在查到可能是 <code>Scan</code> 与 <code>Connect</code> 有冲突，所以现在尝试在 <code>connect</code> 的时候,把 <code>Scan</code> 停止掉.</li>
+<li>4.证实是 <code>Scan</code> 与 <code>Connect</code> 有冲突.</li>
+</ul>
+<h3 id="7-出现-Do-you-have-a-shared-runtime-build-of-your-app-with-AndroidManifest-xml-错误"><a href="#7-出现-Do-you-have-a-shared-runtime-build-of-your-app-with-AndroidManifest-xml-错误" class="headerlink" title="7.出现 Do you have a shared runtime build of your app with AndroidManifest.xml 错误"></a>7.出现 <code>Do you have a shared runtime build of your app with AndroidManifest.xml</code> 错误</h3><ul>
+<li>1.<a href="https://forums.xamarin.com/discussion/128386/i-need-to-manually-uninstall-the-app-every-time-i-want-to-deploy-on-my-device" target="_blank" rel="noopener">参考</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Forwarding debugger port 8847</span><br><span class="line">Detecting existing process</span><br><span class="line">&gt; am start -n &quot;com.greenworkstools.mowergg/md5e58438a37f85ea0542e2cf77e1751acd.MainActivity&quot;</span><br><span class="line">&gt; Starting: Intent &#123; cmp=com.greenworkstools.mowergg/md5e58438a37f85ea0542e2cf77e1751acd.MainActivity &#125;</span><br><span class="line">...</span><br><span class="line">com.greenworkstools.mowergg/files/.__override__, app_libdir: /data/app/com.greenworkstools.mowergg-6BHblXJgnD5enhv8O4gR5A==/lib/arm64 nor in previously printed locations.</span><br><span class="line">[monodroid] Do you have a shared runtime build of your app with AndroidManifest.xml android:minSdkVersion &lt; 10 while running on a 64-bit Android 5.0 target? This combination is not supported.</span><br><span class="line">[monodroid] Please either set android:minSdkVersion &gt;= 10 or use a build without the shared runtime (like default Release configuration).</span><br></pre></td></tr></table></figure>
+<ul>
+<li>2.解决方法: <ul>
+<li>1.把 <code>Options -&gt; Android Build -&gt; General -&gt; UseShared Mono Runtime</code> 的勾去掉.<br><img src="http://pic.pgyjz.cn/blog/Xamarin/Snip20190328_1.png" alt></li>
+</ul>
+</li>
+</ul>
+<h3 id="8-出现-Version-conflict-detected-for-Xamarin-Android-Support-Compat-错误"><a href="#8-出现-Version-conflict-detected-for-Xamarin-Android-Support-Compat-错误" class="headerlink" title="8.出现 Version conflict detected for Xamarin.Android.Support.Compat 错误"></a>8.出现 <code>Version conflict detected for Xamarin.Android.Support.Compat</code> 错误</h3><ul>
+<li>1.相应安装 <code>ble.net.android</code> 包，但提示 <code>Version conflict detected for Xamarin.Android.Support.Compat. Install/reference Xamarin.Android.Support.Compat 28.0.0.1 directly to project MowerGG.Android to resolve this issue.</code> 错误.</li>
+<li>2.参考 <a href="https://github.com/jguertl/SharePlugin/issues/91" target="_blank" rel="noopener">https://github.com/jguertl/SharePlugin/issues/91</a> 说是可以手动解决，以下是我手动解决这个问题的方法:<ul>
+<li>1.用文本编译器打开 <code>.Android.csproj</code> 文件.<br><img src="http://pic.pgyjz.cn/blog/Xamarin/Snip20190402_2.png" alt></li>
+<li>2.找到所需要手动更改版本的包名，然后手动更改版本.<br><img src="http://pic.pgyjz.cn/blog/Xamarin/Snip20190402_1.png" alt></li>
+</ul>
+</li>
+</ul>
+<h3 id="9-出现-not-enough-space"><a href="#9-出现-not-enough-space" class="headerlink" title="9.出现 not enough space"></a>9.出现 <code>not enough space</code></h3><ul>
+<li><p>1.详细的错误 log 为 <code>Xamarin Mono.AndroidTools.InstallFailedException: Unexpected install output: Error: android.os.ParcelableException: java.io.IOException: Requested internal only, but not enough space</code>。</p>
+<ul>
+<li>1.在 <code>Android Studio</code> 上安装其他的 APP 也安装不成功，提示 <code>Android Studio Application Failed uninstall the existing application</code> 信息.</li>
+</ul>
+</li>
+<li><p>2.解决方法:</p>
+<ul>
+<li>1.证实不关手机存储大小的问题，我手机有 500 M 的可存储空间，但还是安装不上.</li>
+<li>2.把手机中的旧的 APP(相同一个 APP) 卸载掉.</li>
+<li>3.把手机中有关 <code>Xamarin</code> 的 Library 卸载掉, 如在 <code>华为 Honor V8(KNT-UL10),EMUI 8.0.0,Android 8.0.0</code> 中的路径为: <code>设置 -&gt; 应用和通知 -&gt; 应用管理 -&gt; Xamarin.Android API-XX Support</code> 卸载掉.<br><img src="http://pic.pgyjz.cn/blog/Xamarin/1301554961700_.pic.jpg" alt></li>
+<li>4.这样 <code>Android Studio</code> 的 APP 可以运行，但是 <code>Visual Studio</code> APP 还是不能运行安装.</li>
+<li>5.参考下面的  <code>10.出现 TypeLoadException</code> ,然后手机让 内部的存储 至少有 1G 的可用空间，<code>Visual Studio</code> 才安装上了 APP.</li>
+</ul>
+</li>
+</ul>
+<h3 id="10-出现-TypeLoadException"><a href="#10-出现-TypeLoadException" class="headerlink" title="10.出现 TypeLoadException"></a>10.出现 <code>TypeLoadException</code></h3><ul>
+<li>1.一打开 APP 就 Crash,完整的 Log 为: <code>this.InitializeComponent() System.TypeLoadException</code>:</li>
+</ul>
+<p><img src="http://pic.pgyjz.cn/blog/Xamarin/screenshot 2019-04-03 at 15.18.39.png" alt></p>
+<ul>
+<li>2.参考: <a href="https://forums.xamarin.com/discussion/127860/unhandled-exception-system-typeloadexception-could-not-resolve-type-with-token-010000c1" target="_blank" rel="noopener">Unhandled Exception: System.TypeLoadException: Could not resolve type with token 010000c1</a>的做法，解决了问题</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. Clean all </span><br><span class="line">2. Close IDE</span><br><span class="line">3. uninstall the APP from your phone.</span><br><span class="line">4. Remove all bin and obj folders from all projects (shared and device specific)</span><br><span class="line">5. Restart IDE, build and run</span><br></pre></td></tr></table></figure>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='blog-comments'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
+        data-d=''
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1573019751/TriDiamond_logo_ui_xeublz.jpg" height=300 width=300></img>
+                    <p>Tim</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        <dd><a href="https://github.com/TriDiamond" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/TriDiamond6" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="https://stackoverflow.com/users/7602324/tridiamond?tab=profile" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">89 <p>Articles</p></a></li>
+                    <li><a href="/categories">26 <p>Categories</p></a></li>
+                    <li><a href="/tags">23 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-错误及解决方法的记录"><span class="toc-number">1.</span> <span class="toc-text">1.错误及解决方法的记录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-错误及解决方法的记录-1"><span class="toc-number">2.</span> <span class="toc-text">1.错误及解决方法的记录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Xamarin-项目编译时-出现-The-quot-Microsoft-Build-Tasks-Git-LocateRepository-quot-task-failed-unexpectedly-System-BadImageFormatException-Method-has-no-body-Error"><span class="toc-number">2.1.</span> <span class="toc-text">1.Xamarin 项目编译时,出现 The &quot;Microsoft.Build.Tasks.Git.LocateRepository&quot; task failed unexpectedly.System.BadImageFormatException: Method has no body Error.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-获取项目文件数据的时候，出现-NULL-exception-error"><span class="toc-number">2.2.</span> <span class="toc-text">2.获取项目文件数据的时候，出现 NULL exception error.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-遇到错误-Error-APT0000-Error-retrieving-parent-for-item-No-resource-found-that-matches-the-given-name-39-Theme-AppCompat-Light-DarkActionBar-39-APT0000-BLE-APP2-Android"><span class="toc-number">2.3.</span> <span class="toc-text">3.遇到错误 Error APT0000: Error retrieving parent for item: No resource found that matches the given name &#39;Theme.AppCompat.Light.DarkActionBar&#39;. (APT0000) (BLE_APP2.Android)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-遇到错误-MTOUCH-Error-MT2101-Can-39-t-resolve-the-reference-referenced-from-the-method-MT2101-BLE-List-Connect-iOS"><span class="toc-number">2.4.</span> <span class="toc-text">4.遇到错误 MTOUCH: Error MT2101: Can&#39;t resolve the reference ... , referenced from the method ... (MT2101) (BLE_List_Connect.iOS)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-遇到错误-在-MainPageViewModel-中取得-App-xaml-cs-中静态变量的值为空"><span class="toc-number">2.5.</span> <span class="toc-text">5.遇到错误 在 MainPageViewModel 中取得 App.xaml.cs 中静态变量的值为空.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-ble-net-包在-GG-项目中一直连接不成功"><span class="toc-number">2.6.</span> <span class="toc-text">6.ble.net 包在 GG 项目中一直连接不成功.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-出现-Do-you-have-a-shared-runtime-build-of-your-app-with-AndroidManifest-xml-错误"><span class="toc-number">2.7.</span> <span class="toc-text">7.出现 Do you have a shared runtime build of your app with AndroidManifest.xml 错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-出现-Version-conflict-detected-for-Xamarin-Android-Support-Compat-错误"><span class="toc-number">2.8.</span> <span class="toc-text">8.出现 Version conflict detected for Xamarin.Android.Support.Compat 错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-出现-not-enough-space"><span class="toc-number">2.9.</span> <span class="toc-text">9.出现 not enough space</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-出现-TypeLoadException"><span class="toc-number">2.10.</span> <span class="toc-text">10.出现 TypeLoadException</span></a></li></ol></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2020
+        <span class="gradient-text">
+            Tim
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+    <script src="/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149874671-1');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>

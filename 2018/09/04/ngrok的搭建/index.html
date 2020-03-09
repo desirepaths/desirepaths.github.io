@@ -1,0 +1,486 @@
+
+<!DOCTYPE html>
+<html lang="中文" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ngrok的搭建 - desirepaths 的博客</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="个人目标：随性而为!.,ngrok的搭建
+内网穿透工具 ngrok 的搭建 。
+
+
+1.参考链接2.搭建步骤3.安装 screen
+
+
+1.参考链接
+1.官网：https://ngrok.com/
+2.源码：https:/,"> 
+    <meta name="author" content="Tim"> 
+    <link rel="alternative" href="atom.xml" title="desirepaths 的博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
+    <link rel="stylesheet" href="/css/ball-atom.min.css">
+</head>
+</html>
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">desirepaths 的博客</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://yoursite.com">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">ngrok的搭建</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg) ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/Linux"><b>「
+                    </b>LINUX<b> 」</b></a>
+                
+                September 04, 2018
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2018/09/04/ngrok的搭建/" title="ngrok的搭建">ngrok的搭建</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    6.5k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    6 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Linux/">Linux</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h1 id="ngrok的搭建"><a href="#ngrok的搭建" class="headerlink" title="ngrok的搭建"></a>ngrok的搭建</h1><blockquote>
+<p>内网穿透工具 ngrok 的搭建 。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="1-参考链接"><a href="#1-参考链接" class="headerlink" title="1.参考链接"></a><a href="#references">1.参考链接</a></h3><h3 id="2-搭建步骤"><a href="#2-搭建步骤" class="headerlink" title="2.搭建步骤"></a><a href="#deploy_step">2.搭建步骤</a></h3><h3 id="3-安装-screen"><a href="#3-安装-screen" class="headerlink" title="3.安装 screen"></a><a href="#screen_install">3.安装 screen</a></h3><hr>
+<hr>
+<hr>
+<h3 id="1-参考链接-1"><a href="#1-参考链接-1" class="headerlink" title="1.参考链接"></a>1.参考链接<a name="references"></a></h3><ul>
+<li>1.官网：<a href="https://ngrok.com/" target="_blank" rel="noopener">https://ngrok.com/</a></li>
+<li>2.源码：<a href="https://github.com/inconshreveable/ngrok" target="_blank" rel="noopener">https://github.com/inconshreveable/ngrok</a></li>
+</ul>
+<hr>
+<h3 id="2-搭建步骤-1"><a href="#2-搭建步骤-1" class="headerlink" title="2.搭建步骤"></a>2.搭建步骤<a name="deploy_step"></a></h3><h4 id="1-使用-ngrok-的免费服务"><a href="#1-使用-ngrok-的免费服务" class="headerlink" title="1.使用 ngrok 的免费服务."></a>1.使用 ngrok 的免费服务.</h4><ul>
+<li><a href="https://dashboard.ngrok.com/get-started" target="_blank" rel="noopener">1.Setup &amp; Installation</a></li>
+<li>2.但是这个免费版的不能 自定义 域名,如出现一下提示.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Mac Tian$ ./ngrok http -subdomain=tiantestdomain 80</span><br><span class="line">Tunnel session failed: Only paid plans may bind custom subdomains.</span><br><span class="line">Failed to bind the custom subdomain &apos;tiantestdomain&apos; for the account &apos;JingTianZeng&apos;.</span><br><span class="line">This account is on the &apos;Free&apos; plan.</span><br><span class="line"></span><br><span class="line">Upgrade to a paid plan at: https://dashboard.ngrok.com/billing/plan</span><br><span class="line"></span><br><span class="line">ERR_NGROK_313</span><br></pre></td></tr></table></figure>
+<h4 id="2-因为这个-ngrok-是个开源的项目，所以可以自己搭建一个内网穿透服务"><a href="#2-因为这个-ngrok-是个开源的项目，所以可以自己搭建一个内网穿透服务" class="headerlink" title="2.因为这个 ngrok 是个开源的项目，所以可以自己搭建一个内网穿透服务."></a>2.因为这个 ngrok 是个开源的项目，所以可以自己搭建一个内网穿透服务.</h4><h5 id="1-参考："><a href="#1-参考：" class="headerlink" title="1.参考："></a>1.参考：</h5><ul>
+<li>1.<a href="https://www.jianshu.com/p/d35962b0dba4" target="_blank" rel="noopener">VPS自搭建Ngrok内网穿透服务()</a></li>
+<li>2.<a href="https://github.com/inconshreveable/ngrok/blob/master/docs/SELFHOSTING.md" target="_blank" rel="noopener">How to run your own ngrokd server</a></li>
+<li>3.<a href="https://www.svenbit.com/2014/09/run-ngrok-on-your-own-server/" target="_blank" rel="noopener">Run Ngrok on Your Own Server Using Self-Signed SSL Certificate (主要参考这个 !!!)</a></li>
+</ul>
+<h5 id="2-具体过程-位于公网的服务器端-有唯一的-Address-负责-DNS-的转换"><a href="#2-具体过程-位于公网的服务器端-有唯一的-Address-负责-DNS-的转换" class="headerlink" title="2.具体过程(位于公网的服务器端,有唯一的 Address,负责 DNS 的转换.):"></a>2.具体过程(位于公网的服务器端,有唯一的 Address,负责 DNS 的转换.):</h5><ul>
+<li>1.按照 3 的教程,一步一步来就可以了 !!!</li>
+<li>2.主要的代码有:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">	user@JapanServer:~# ls</span><br><span class="line">	go  go1.8.1.linux-amd64.tar.gz	ngrok  ngrok_server</span><br><span class="line">	</span><br><span class="line">	user@JapanServer:~# cd ngrok_server</span><br><span class="line">	</span><br><span class="line">	user@JapanServer:~/ngrok_server# ls</span><br><span class="line">	ngrokd	server.crt  server.key</span><br><span class="line">	</span><br><span class="line">	# 开启 ngrokd</span><br><span class="line">./ngrokd -tlsKey=server.key -tlsCrt=server.crt -domain=&quot;ngrok.tianlovezhen.site&quot; -httpAddr=&quot;:80&quot; -httpsAddr=&quot;:443&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>3.让 ngrokd 在后台运行(参考 3 的评论区.)</p>
+<ul>
+<li>1.因为按照 3 的教程, ngrokd 在 ssh 关闭后，也会自动关闭.所以需要让它在后台自动运行.</li>
+<li>2.运行命令 <code>./ngrokd -log=stdout -tlsKey=device.key -tlsCrt=device.crt -domain=&quot;something.tunnel.com&quot; -httpAddr=&quot;:80&quot; -httpsAddr=&quot;:443&quot; &gt; /dev/null &amp;</code></li>
+<li>3.如果需要关闭，就运行 <code>ps -ef | grep &quot;ngrokd&quot;</code> 或 <code>netstat -ntlp</code> 查找出 <code>ngrok</code> 的 PID ，然后运行 <code>kill -9 [PID]</code> 去关闭 <code>ngrokd</code></li>
+</ul>
+</li>
+<li><p>4.让 ngrokd 在后台运行(用 screen 去实现)</p>
+<ul>
+<li>1.具体用法请参考 <a href="https://www.vpser.net/manage/screen.html" target="_blank" rel="noopener"> SSH远程会话管理工具 - screen使用教程</a></li>
+</ul>
+</li>
+</ul>
+<h5 id="3-客户端-位于内网的服务器，负责网页的内容"><a href="#3-客户端-位于内网的服务器，负责网页的内容" class="headerlink" title="3.客户端(位于内网的服务器，负责网页的内容)"></a>3.客户端(位于内网的服务器，负责网页的内容)</h5><ul>
+<li>1.下载上一步 <code>make release-server release-client</code> 后生成的客户端程序 <code>ngrok</code>,在所运行命令路径的 <code>bin</code> 中.<ul>
+<li>1.下载 <code>Linux:~ user$ scp user@1.2.3.4:/user/ngrok/bin/ngrok /Users/user/Desktop</code></li>
+<li>2.生成一个配置文件如: <code>ngrok.cfg</code> ,在里面写上: </li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">server_addr: [NGROK_BASE_DOMAIN]:4443</span><br><span class="line">trust_host_root_certs: false</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>3.运行命令开始内网穿透,如: <code>./ngrok -subdomain testing -config=ngrok.cfg 80</code></p>
+</li>
+<li><p>4.后台运行(需要借助 screen 去实现)</p>
+<ul>
+<li>1.具体用法请参考 <a href="https://www.vpser.net/manage/screen.html" target="_blank" rel="noopener"> SSH远程会话管理工具 - screen使用教程</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="3-安装-screen-1"><a href="#3-安装-screen-1" class="headerlink" title="3.安装 screen"></a>3.安装 screen<a name="screen_install"></a></h3><ul>
+<li>1.参考:<ul>
+<li><a href="https://www.vpser.net/manage/screen.html" target="_blank" rel="noopener">1.SSH远程会话管理工具 - screen使用教程</a></li>
+</ul>
+</li>
+<li>2.怎样在 linux 启动时开启 screen ,并自动打开 ngrokd 或 ngrok ???</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='blog-comments'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
+        data-d=''
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1573019751/TriDiamond_logo_ui_xeublz.jpg" height=300 width=300></img>
+                    <p>Tim</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        <dd><a href="https://github.com/TriDiamond" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/TriDiamond6" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="https://stackoverflow.com/users/7602324/tridiamond?tab=profile" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">89 <p>Articles</p></a></li>
+                    <li><a href="/categories">26 <p>Categories</p></a></li>
+                    <li><a href="/tags">23 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ngrok的搭建"><span class="toc-number">1.</span> <span class="toc-text">ngrok的搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-参考链接"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.参考链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-搭建步骤"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.搭建步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-安装-screen"><span class="toc-number">1.0.3.</span> <span class="toc-text">3.安装 screen</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-参考链接-1"><span class="toc-number">1.0.4.</span> <span class="toc-text">1.参考链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-搭建步骤-1"><span class="toc-number">1.0.5.</span> <span class="toc-text">2.搭建步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-安装-screen-1"><span class="toc-number">1.0.6.</span> <span class="toc-text">3.安装 screen</span></a></li></ol></li></ol></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2020
+        <span class="gradient-text">
+            Tim
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+    <script src="/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149874671-1');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>

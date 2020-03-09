@@ -1,0 +1,462 @@
+
+<!DOCTYPE html>
+<html lang="中文" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>GitLab 的搭建 - desirepaths 的博客</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="个人目标：随性而为!.,GitLab 服务器的搭建
+记录下公司的 GitLab 服务器的搭建过程。
+
+
+1.GitLab 参考2.GitLab 存储相关3.GitLab 配置4.GitLab 错误的解决
+1.GitLab ,"> 
+    <meta name="author" content="Tim"> 
+    <link rel="alternative" href="atom.xml" title="desirepaths 的博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
+    <link rel="stylesheet" href="/css/ball-atom.min.css">
+</head>
+</html>
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">desirepaths 的博客</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://yoursite.com">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">GitLab 的搭建</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg) ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/Linux"><b>「
+                    </b>LINUX<b> 」</b></a>
+                
+                December 19, 2017
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2017/12/19/GitLab的搭建/" title="GitLab 的搭建">GitLab 的搭建</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    17k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    16 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Linux/">Linux</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h1 id="GitLab-服务器的搭建"><a href="#GitLab-服务器的搭建" class="headerlink" title="GitLab 服务器的搭建"></a>GitLab 服务器的搭建</h1><ul>
+<li>记录下公司的 GitLab 服务器的搭建过程。</li>
+</ul>
+<a id="more"></a>
+<h2 id="1-GitLab-参考"><a href="#1-GitLab-参考" class="headerlink" title="1.GitLab 参考"></a><a href="#gitlab_references">1.GitLab 参考</a></h2><h2 id="2-GitLab-存储相关"><a href="#2-GitLab-存储相关" class="headerlink" title="2.GitLab 存储相关"></a><a href="#gitlab_store">2.GitLab 存储相关</a></h2><h2 id="3-GitLab-配置"><a href="#3-GitLab-配置" class="headerlink" title="3.GitLab 配置"></a><a href="#gitlab_config">3.GitLab 配置</a></h2><h2 id="4-GitLab-错误的解决"><a href="#4-GitLab-错误的解决" class="headerlink" title="4.GitLab 错误的解决"></a><a href="#gitlab_issues">4.GitLab 错误的解决</a></h2><hr>
+<h2 id="1-GitLab-参考-1"><a href="#1-GitLab-参考-1" class="headerlink" title="1.GitLab 参考"></a>1.GitLab 参考<a name="gitlab_references"></a></h2><ul>
+<li>参考1: https://about.gitlab.com/installation/#debian</li>
+<li>参考2: https://github.com/gitlabhq</li>
+<li>3: http://www.jianshu.com/p/b26affeffc18</li>
+<li>4.快速安装 GitLab 并汉化:  http://www.jianshu.com/p/7a0d6917e009</li>
+</ul>
+<hr>
+<h2 id="2-GitLab-存储相关-1"><a href="#2-GitLab-存储相关-1" class="headerlink" title="2.GitLab 存储相关"></a>2.GitLab 存储相关<a name="gitlab_store"></a></h2><ul>
+<li>1.项目文件的位置<ul>
+<li><a href="https://docs.gitlab.com/ee/administration/repository_storage_paths.html" target="_blank" rel="noopener">参考1.Repository storage paths</a></li>
+</ul>
+</li>
+<li>2.项目的路径在 <code>/var/opt/gitlab/git-data</code> 中(项目-&gt;个人-&gt;个人的项目).</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">user@glb:/home/tian# cd /var/opt/gitlab/git-data</span><br><span class="line">user@glb:/var/opt/gitlab/git-data# ls</span><br><span class="line">repositories</span><br><span class="line">user@glb:/var/opt/gitlab/git-data# cd repositories</span><br><span class="line">user@glb:/var/opt/gitlab/git-data/repositories# ls</span><br><span class="line">Kyrie  Tian_test  Tim  yonghui.ye</span><br><span class="line">user@glb:/var/opt/gitlab/git-data/repositories# cd Tim </span><br><span class="line">user@glb:/var/opt/gitlab/git-data/repositories/Tim# ls</span><br><span class="line">Android_GreenGuide.git	       GoogleMapDev.git</span><br><span class="line">Android_GreenGuide.wiki.git    GoogleMapDev.wiki.git</span><br><span class="line">Cramer.git		       GreenGuide_Translate.git</span><br><span class="line">Cramer.wiki.git		       GreenGuide_Translate.wiki.git</span><br><span class="line">EmployeePackage.git	       InternalProject.git</span><br><span class="line">EmployeePackage.wiki.git       InternalProject.wiki.git</span><br><span class="line">GLB_BLE_Protocol.git	       newProject.git</span><br><span class="line">GLB_BLE_Protocol.wiki.git      newProject.wiki.git</span><br><span class="line">GLB_BLE_TestApp2.git	       PrivateProject.git</span><br><span class="line">GLB_BLE_TestApp2.wiki.git      PrivateProject.wiki.git</span><br><span class="line">GLB_BLE_TEST_APP.git	       TestProject.git</span><br><span class="line">GLB_BLE_TEST_APP_iOS.git       TestProject.wiki.git</span><br><span class="line">GLB_BLE_TEST_APP_iOS.wiki.git  ZTR_iOS.git</span><br><span class="line">GLB_BLE_TEST_APP.wiki.git      ZTR_iOS.wiki.git</span><br><span class="line">user@glb:/var/opt/gitlab/git-data/repositories/Tim#</span><br></pre></td></tr></table></figure>
+<ul>
+<li>3.但是在项目中保存的文件应该是经过编译了的，实际的项目的文件找不到.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line">user@glb:/var/opt/gitlab/git-data/repositories/Tim# cd Cramer.git</span><br><span class="line">user@glb:/var/opt/gitlab/git-data/repositories/Tim/Cramer.git# ls</span><br><span class="line">config	description  HEAD  hooks  info	objects  refs</span><br><span class="line">user@glb:/var/opt/gitlab/git-data/repositories/Tim/Cramer.git# cd objects</span><br><span class="line">user@glb:/var/opt/gitlab/git-data/repositories/Tim/Cramer.git/objects# ls</span><br><span class="line">01  0c	17  24	34  3f	4d  52	76  80	86  9e	b1  c3	cc  e0	info</span><br><span class="line">02  0d	1a  2c	39  45	4e  57	79  81	8a  a0	b9  c8	ce  e2	pack</span><br><span class="line">08  0e	1b  2d	3b  48	4f  6c	7b  83	8c  a1	bb  c9	d0  e7</span><br><span class="line">09  0f	1c  2e	3c  4b	50  72	7e  84	9b  a6	bd  ca	d1  ec</span><br><span class="line">0b  13	1f  2f	3e  4c	51  75	7f  85	9d  aa	c2  cb	d4  fa</span><br><span class="line">user@glb:/var/opt/gitlab/git-data/repositories/Tim/Cramer.git/objects# du -h --max-depth=1</span><br><span class="line">53M	./pack</span><br><span class="line">8.0K	./39</span><br><span class="line">8.0K	./57</span><br><span class="line">20K	./75</span><br><span class="line">8.0K	./2c</span><br><span class="line">8.0K	./3f</span><br><span class="line">12K	./ca</span><br><span class="line">8.0K	./0b</span><br><span class="line">8.0K	./3c</span><br><span class="line">16K	./01</span><br><span class="line">16K	./79</span><br><span class="line">8.0K	./34</span><br><span class="line">8.0K	./d0</span><br><span class="line">8.0K	./b9</span><br><span class="line">8.0K	./7e</span><br><span class="line">8.0K	./76</span><br><span class="line">8.0K	./17</span><br><span class="line">8.0K	./4f</span><br><span class="line">8.0K	./ec</span><br><span class="line">8.0K	./45</span><br><span class="line">8.0K	./80</span><br><span class="line">8.0K	./e7</span><br><span class="line">8.0K	./fa</span><br><span class="line">8.0K	./09</span><br><span class="line">8.0K	./7f</span><br><span class="line">8.0K	./a1</span><br><span class="line">8.0K	./86</span><br><span class="line">8.0K	./1f</span><br><span class="line">8.0K	./4d</span><br><span class="line">8.0K	./7b</span><br><span class="line">8.0K	./9d</span><br><span class="line">8.0K	./bd</span><br><span class="line">8.0K	./c9</span><br><span class="line">8.0K	./1b</span><br><span class="line">8.0K	./a0</span><br><span class="line">8.0K	./d1</span><br><span class="line">16K	./e0</span><br><span class="line">8.0K	./24</span><br><span class="line">8.0K	./cc</span><br><span class="line">8.0K	./1c</span><br><span class="line">8.0K	./0e</span><br><span class="line">16K	./0f</span><br><span class="line">12K	./cb</span><br><span class="line">8.0K	./13</span><br><span class="line">8.0K	./52</span><br><span class="line">8.0K	./08</span><br><span class="line">8.0K	./4c</span><br><span class="line">8.0K	./02</span><br><span class="line">20K	./8c</span><br><span class="line">12K	./9e</span><br><span class="line">8.0K	./a6</span><br><span class="line">8.0K	./4e</span><br><span class="line">8.0K	./6c</span><br><span class="line">8.0K	./aa</span><br><span class="line">12K	./2f</span><br><span class="line">8.0K	./81</span><br><span class="line">8.0K	./3b</span><br><span class="line">8.0K	./84</span><br><span class="line">8.0K	./c2</span><br><span class="line">8.0K	./info</span><br><span class="line">8.0K	./51</span><br><span class="line">8.0K	./bb</span><br><span class="line">12K	./0c</span><br><span class="line">20K	./0d</span><br><span class="line">8.0K	./4b</span><br><span class="line">8.0K	./8a</span><br><span class="line">8.0K	./9b</span><br><span class="line">12K	./83</span><br><span class="line">12K	./b1</span><br><span class="line">12K	./3e</span><br><span class="line">8.0K	./c3</span><br><span class="line">12K	./e2</span><br><span class="line">8.0K	./2d</span><br><span class="line">8.0K	./d4</span><br><span class="line">8.0K	./ce</span><br><span class="line">8.0K	./2e</span><br><span class="line">8.0K	./1a</span><br><span class="line">8.0K	./c8</span><br><span class="line">8.0K	./85</span><br><span class="line">8.0K	./50</span><br><span class="line">12K	./48</span><br><span class="line">8.0K	./72</span><br><span class="line">54M	.</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="3-GitLab-的配置"><a href="#3-GitLab-的配置" class="headerlink" title="3.GitLab 的配置"></a>3.GitLab 的配置<a name="gitlab_config"></a></h2><ul>
+<li>1.GitLab 安装完成后，出现的提示信息.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GitLab was unable to detect a valid hostname for your instance.</span><br><span class="line">Please configure a URL for your GitLab instance by setting `external_url`</span><br><span class="line">configuration in /etc/gitlab/gitlab.rb file.</span><br><span class="line">Then, you can start your GitLab instance by running the following command:</span><br><span class="line">  sudo gitlab-ctl reconfigure</span><br><span class="line"></span><br><span class="line">For a comprehensive list of configuration options please see the Omnibus GitLab readme</span><br><span class="line">https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/README.md</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="4-GitLab-错误的解决-1"><a href="#4-GitLab-错误的解决-1" class="headerlink" title="4.GitLab 错误的解决"></a>4.GitLab 错误的解决<a name="gitlab_issues"></a></h2><h3 id="1-出现-Whoops-GitLab-is-taking-too-much-time-to-respond-Whoops-something-went-wrong-on-our-end-错误"><a href="#1-出现-Whoops-GitLab-is-taking-too-much-time-to-respond-Whoops-something-went-wrong-on-our-end-错误" class="headerlink" title="1.出现 Whoops, GitLab is taking too much time to respond.,Whoops, something went wrong on our end. 错误:"></a>1.出现 <code>Whoops, GitLab is taking too much time to respond.</code>,<code>Whoops, something went wrong on our end.</code> 错误:</h3><p><img src="/assets/imgs/git/screen_shot_gitlab.png" width="50%" height="50%"><br><img src="/assets/imgs/git/screen_shot_gitlab2.png" width="50%" height="50%"></p>
+<h3 id="1-1-解决方法记录"><a href="#1-1-解决方法记录" class="headerlink" title="1.1.解决方法记录:"></a>1.1.解决方法记录:</h3><ul>
+<li>1.看到 <code>var</code> 目录满了，可能是这个原因:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"># df -h</span><br><span class="line">Filesystem      Size  Used Avail Use% Mounted on</span><br><span class="line">/dev/sda1       8.2G  3.1G  4.7G  40% /</span><br><span class="line">udev             10M     0   10M   0% /dev</span><br><span class="line">tmpfs           1.6G   49M  1.6G   4% /run</span><br><span class="line">tmpfs           3.9G     0  3.9G   0% /dev/shm</span><br><span class="line">tmpfs           5.0M  4.0K  5.0M   1% /run/lock</span><br><span class="line">tmpfs           3.9G     0  3.9G   0% /sys/fs/cgroup</span><br><span class="line">/dev/sda5       2.7G  2.6G     0 100% /var</span><br><span class="line">/dev/sda7       360M  5.3M  332M   2% /tmp</span><br><span class="line">/dev/sda8       432G  698M  409G   1% /home</span><br><span class="line"></span><br><span class="line"># du -h --max-depth=1 /var</span><br><span class="line">16K	/var/lost+found</span><br><span class="line">4.0K	/var/local</span><br><span class="line">8.0K	/var/www</span><br><span class="line">8.0K	/var/tmp</span><br><span class="line">40K	/var/mail</span><br><span class="line">6.0M	/var/backups</span><br><span class="line">820K	/var/spool</span><br><span class="line">187M	/var/lib</span><br><span class="line">1.4G	/var/cache</span><br><span class="line">899M	/var/opt</span><br><span class="line">84M	/var/log</span><br><span class="line">2.6G	/var</span><br></pre></td></tr></table></figure>
+<ul>
+<li>2.所以把 <code>var/cache</code>和 <code>var/opt</code> 目录移到 <code>home</code> 目录中,建立软链接.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ mv /var/cache /home/</span><br><span class="line">$ ln -s /home/cache /var/cache</span><br><span class="line">$ mv /var/opt /home/</span><br><span class="line">$ ln -s /home/opt /var/opt</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>3.配置 <code>/etc/gitlab/gitlab.rb</code> 文件,然后运行 <code>sudo gitlab-ctl reconfigure</code>,参考 <a href="https://docs.gitlab.com/omnibus/settings/unicorn.html" target="_blank" rel="noopener">Unicorn settings</a>,<a href="https://gitlab.com/gitlab-org/gitlab-ce/issues/30095" target="_blank" rel="noopener">502-Whoops, GitLab is taking too much time to respond</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unicorn[&apos;worker_processes&apos;] = 3</span><br><span class="line">unicorn[&apos;worker_timeout&apos;] = 60</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4.重新启动服务器，问题就解决了.(重启 gitlab 也无效 !)</p>
+</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='blog-comments'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
+        data-d=''
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1573019751/TriDiamond_logo_ui_xeublz.jpg" height=300 width=300></img>
+                    <p>Tim</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        <dd><a href="https://github.com/TriDiamond" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/TriDiamond6" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="https://stackoverflow.com/users/7602324/tridiamond?tab=profile" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">89 <p>Articles</p></a></li>
+                    <li><a href="/categories">26 <p>Categories</p></a></li>
+                    <li><a href="/tags">23 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GitLab-服务器的搭建"><span class="toc-number">1.</span> <span class="toc-text">GitLab 服务器的搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-GitLab-参考"><span class="toc-number">1.1.</span> <span class="toc-text">1.GitLab 参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-GitLab-存储相关"><span class="toc-number">1.2.</span> <span class="toc-text">2.GitLab 存储相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-GitLab-配置"><span class="toc-number">1.3.</span> <span class="toc-text">3.GitLab 配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-GitLab-错误的解决"><span class="toc-number">1.4.</span> <span class="toc-text">4.GitLab 错误的解决</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-GitLab-参考-1"><span class="toc-number">1.5.</span> <span class="toc-text">1.GitLab 参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-GitLab-存储相关-1"><span class="toc-number">1.6.</span> <span class="toc-text">2.GitLab 存储相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-GitLab-的配置"><span class="toc-number">1.7.</span> <span class="toc-text">3.GitLab 的配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-GitLab-错误的解决-1"><span class="toc-number">1.8.</span> <span class="toc-text">4.GitLab 错误的解决</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-出现-Whoops-GitLab-is-taking-too-much-time-to-respond-Whoops-something-went-wrong-on-our-end-错误"><span class="toc-number">1.8.1.</span> <span class="toc-text">1.出现 Whoops, GitLab is taking too much time to respond.,Whoops, something went wrong on our end. 错误:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-解决方法记录"><span class="toc-number">1.8.2.</span> <span class="toc-text">1.1.解决方法记录:</span></a></li></ol></li></ol></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2020
+        <span class="gradient-text">
+            Tim
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+    <script src="/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149874671-1');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>
